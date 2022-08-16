@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
 
 </head>
@@ -13,17 +14,23 @@
     <div id="motionWrap">
         <img src="img/main/bg-overlay.png" alt="background overlay" class="mainbackground">
         
+        <div class="menu">
+            <a href="#">HOME</a>
+            <a href="#">WORK</a>
+            <a href="#" class="">ABOUT</a>
+        </div>
+
         <div id="line">
             <div class="leftgold">
     
             </div>
-            <div class="leftLine">
+            <div class="left Line">
     
             </div>
-            <div class="rightLine">
+            <div class="right Line">
     
             </div>
-            <div class="bottomLine">
+            <div class="bottom Line">
     
             </div>
         </div>
@@ -34,9 +41,13 @@
                     <div class="mainContent">
                         <div class="mainContent-Text">
                             <h1>
-                                <span class="glitch" data-text="WEB DESIGN"></span><br>
+                                <span class="glitch" data-text="WEB"></span><br>
+                                <span class="glitch" data-text="DESIGN"></span><br>
                                 <span class="glitch" data-text="PORTFOLIO"></span>
                             </h1>
+                        </div>
+                        <div class="mainContent-page2">
+
                         </div>
                     </div>
 
@@ -46,4 +57,56 @@
     </div>
 
 </body>
+<script>
+
+let num = 0;
+let idx = 0;
+let delta;
+const scorll = document.querySelector('.scroll-container');
+const maincontent = document.querySelector('.mainContent');
+
+
+$(window).on('mousewheel DOMMouseScroll', function (e) {
+    delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+    if (delta < 0) {
+        if (!(num == 12)) {
+            num++;
+            if (num <= 11) {
+                maincontent.classList.remove('c')
+                scorll.classList.remove('c')
+                scorll.classList.add('a')
+                maincontent.classList.add('b')
+
+     
+            }
+        }
+        if ((num == 12) && (idx < elMainCon.length)) {
+            idx++;
+        }
+    } else {
+        if (!(idx == 0)) {
+            idx--;
+        }
+        if ((num > 0) && (idx == 0)) {
+            num--;
+            maincontent.classList.remove('b')
+            scorll.classList.remove('a')
+            scorll.classList.add('c')
+            maincontent.classList.add('c')
+
+
+            
+            
+        }
+    }
+    
+
+
+    // $('html,body').stop().animate({
+    //     scrollTop: ($(window).height()) * idx
+    // }, 600)
+})
+
+
+</script>
 </html>
