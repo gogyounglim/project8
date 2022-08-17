@@ -1,16 +1,27 @@
 html{width: 100%; height: 100%; }
-body{position: fixed; overflow: hidden; width: 100%; max-width: 100%; height: 100%; background-color: rgb(30, 30, 54);}
+body{cursor: none; position: fixed; overflow: hidden; width: 100%; max-width: 100%; height: 100%; background-color: rgb(30, 30, 54);}
 * {box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth;}
 ul,li,ol{list-style: none;}
-a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder;  }
+a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder;cursor: none;  }
+img{width: 100%; height: 100%;}
+
+.a{transform: matrix(1, 0, 0, 1, 0, -774); transition: all  2s cubic-bezier(.42,0,0,1.01); }
+.b{transform: matrix(-1, 0, 0, -1, 0, 0); transition: all 2s cubic-bezier(.42,0,0,1.01); }
+.c{transform: matrix(1, 0, 0, 1, 0, 0); transition: all 2s cubic-bezier(.42,0,0,1.01);}
+
+.boxheight0{
+  height: 0%;
+  transition: 0.3s;
+
+}
+.boxheight100{height: 100%; opacity: 1;
+  transition: 0.5s;
+  transition-delay: 2s;
+}
+
+.pointer2{border: 2px solid white;}
 
 
-.a{transform: matrix(1, 0, 0, 1, 0, -774); transition: all  1s; }
-.b{transform: matrix(-1, 0, 0, -1, 0, 0); transition: all 1s; }
-.c{transform: matrix(1, 0, 0, 1, 0, 0); transition: all 1s;}
-
-
-// #motionWrap{overflow: hidden; transform: matrix(1, 0, 0, 1, 0, 0); transition: transform 1s; width: 1100px;height: 800px; }
 #motionWrap{
     overflow: hidden;
     width: 100%;
@@ -18,11 +29,39 @@ a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder; 
     position: relative;
     
 }
+.pointer{
+  position: absolute;
+  z-index: 99;
+  background: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b28949;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+  transition-property: background ,border,height,width,transform;
+  pointer-events: none;
+  transform: translate(-10px,-10px);
+}
 .menu{
   top: 130px;
   position: fixed;
   top: 130px;
   left: 140px;
+  transition: 0.5s;
+  transition-delay: 1.3s;
+  z-index: 999;
+  >a{
+    z-index: 999;
+  }
+  >a:nth-child(2){
+    opacity: 0.3;
+  }
+  >a:nth-child(3){
+    opacity: 0.3;
+  }
 }
 .Line{
   z-index: 1000;
@@ -65,6 +104,19 @@ a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder; 
     // transform: translateY(-50%);
     top:40px;
     z-index: 1000;
+    transition: 0.5s ease-in-out;
+    transition-delay: 1.5s; 
+}
+.rightgold{
+  position: absolute;
+  background: #b28949;
+  width: 3px;
+  height: 200px;
+  right: 40px;
+  top: 0px;
+  z-index: 1000;
+  transition: 0.5s ease-in-out;
+  transition-delay: 1.5s; 
 }
 .mainbackground{
     position: absolute;
@@ -90,7 +142,7 @@ a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder; 
 
 .mainContent{
     position: absolute;
-    transition: 1s;
+    // transition: 1s;
     width: 100%;
     height: 100vh;
     .mainContent-Text{
@@ -102,6 +154,12 @@ a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder; 
             font-size: 120px;
             position: relative;
         }
+        >h2{
+          font-size: 15px;
+          font-weight: bold;
+          margin-left: 10px;
+          color: #b28949;
+        }
 
     }
 }
@@ -111,9 +169,76 @@ a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder; 
   background-color: white;
   position: absolute;
   right: 0;
-  bottom: calc(100% - 90px);
+  bottom: calc(100% - 60px);
   
 }
+.mainContent2{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: calc(100vh - 195px);
+  left: 0;
+  display: flex;
+  >div:nth-child(1){
+    width: 20%;
+    height: 100vh;
+  }
+  >div:nth-child(2){
+    width: 60%;
+    height: 100vh;
+  }
+  >div:nth-child(3){
+    width: 20%;
+    height: 100vh;
+  }
+  
+}
+.portfolioWrap{
+  width: 100%;
+  height: 50%;
+  // background-color: wheat;
+  margin-top: 200px;
+  position: relative;
+  
+}
+
+
+.portfoliobox{
+  width: 100%;
+  background-color: wheat;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  
+}
+.mainContent2-Text1{ 
+  height: 30%;
+  transform: translate(-50%,-50%);
+  left: 15%;
+  position: absolute;
+  
+  h1{
+    color: black;
+    font-size: 300px;
+    font-weight: 900;
+  }
+}
+.textani{
+  opacity: 0;
+  top: 70%;
+  transition: 0.5s;
+}
+.textani2{
+  opacity: 1;
+  top: 40%;
+  transition: 0.5s;
+  transition-delay: 2s;
+}
+
+
+
 
 
 

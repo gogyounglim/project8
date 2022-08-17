@@ -8,6 +8,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
 
+
 </head>
 <body>
     
@@ -33,6 +34,12 @@
             <div class="bottom Line">
     
             </div>
+            <div class="rightgold">
+
+            </div>
+        </div>
+        <div class="pointer">
+
         </div>
 
         <div class="mainWrap">
@@ -44,11 +51,28 @@
                                 <span class="glitch" data-text="WEB"></span><br>
                                 <span class="glitch" data-text="DESIGN"></span><br>
                                 <span class="glitch" data-text="PORTFOLIO"></span>
-                            </h1>
+                            </h1><br>
+                            <h2>FRONT-END DEVELOPER</h2>
                         </div>
                         <div class="mainContent-page2">
 
                         </div>
+                    </div>
+                    <div class="mainContent2">
+                        <div>
+                            <div class="mainContent2-Text1 textani">
+                                <span><h1>20</h1></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="portfolioWrap">
+                                <div class="portfoliobox boxheight0">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div></div>
+                        
                     </div>
 
                 </div>
@@ -62,8 +86,13 @@
 let num = 0;
 let idx = 0;
 let delta;
-const scorll = document.querySelector('.scroll-container');
+const scroll1 = document.querySelector('.scroll-container');
 const maincontent = document.querySelector('.mainContent');
+const leftgoldLine = document.querySelector('.leftgold');
+const rightgoldLine = document.querySelector('.rightgold');
+const menuwrap = document.querySelector('.menu');
+const portfoliobox = document.querySelector('.portfoliobox');
+const mainContent2Text1 = document.querySelector('.mainContent2-Text1');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
@@ -71,14 +100,27 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
     if (delta < 0) {
         if (!(num == 12)) {
             num++;
-            if (num <= 11) {
-                maincontent.classList.remove('c')
-                scorll.classList.remove('c')
-                scorll.classList.add('a')
-                maincontent.classList.add('b')
+            if (num <= 5) {
+                maincontent.classList.remove('c');
+                scroll1.classList.remove('c');
+                scroll1.classList.add('a');
+                maincontent.classList.add('b');
+                leftgoldLine.style.height='50%';
+                leftgoldLine.style.top='20%';
+                rightgoldLine.style.top = '30%'
+                rightgoldLine.style.height = '50px';
+                menuwrap.style.top = '80px';
+                portfoliobox.classList.remove('boxheight0');
+                portfoliobox.classList.add('boxheight100');
+                mainContent2Text1.classList.remove('textani');
+                mainContent2Text1.classList.add('textani2');
 
-     
+                
             }
+            else if(num>1){
+                
+            }
+            
         }
         if ((num == 12) && (idx < elMainCon.length)) {
             idx++;
@@ -90,22 +132,58 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
         if ((num > 0) && (idx == 0)) {
             num--;
             maincontent.classList.remove('b')
-            scorll.classList.remove('a')
-            scorll.classList.add('c')
+            scroll1.classList.remove('a')
+            scroll1.classList.add('c')
             maincontent.classList.add('c')
-
-
+            leftgoldLine.style.height='60px';
+            leftgoldLine.style.top='40px';
+            rightgoldLine.style.top = '0px'
+            rightgoldLine.style.height = '200px';
+            menuwrap.style.top = '130px';
+            portfoliobox.classList.remove('boxheight100');
+            portfoliobox.classList.add('boxheight0');
             
             
         }
     }
-    
 
-
-    // $('html,body').stop().animate({
-    //     scrollTop: ($(window).height()) * idx
-    // }, 600)
+console.log('스크롤',num);
+console.log('idx',idx);
 })
+
+$(function(){
+    var pointSize = $(".pointer").width()/2;
+    $("body").mousemove(function(e){    
+        $('.pointer').css("top", e.pageY-pointSize);
+        $('.pointer').css("left", e.pageX-pointSize);
+        $('.pointer').fadeIn();
+    });
+    $("body").on("mouseleave", function(){
+        $('.pointer').fadeOut();
+    });
+
+    $('.menu').mouseover(function(){
+        $('.pointer').addClass('pointer2');
+    });
+
+
+
+});
+
+
+
+    $(document).on("mousemove", function(event) {
+  var window_height = $(this).height();
+  var window_width = $(this).width();
+  var mouseXpos = event.clientX;
+  var mouseYpos = event.clientY;
+  var YrotateDeg = (window_width / 2 - mouseXpos) * 0.03;
+  var XrotateDeg = (window_height / 2 - mouseYpos) * -0.03;
+  $(".portfolioWrap").css(
+    "transform",
+    "rotateX(" + XrotateDeg + "deg) rotateY(" + YrotateDeg + "deg)"
+  );
+});
 
 
 </script>
