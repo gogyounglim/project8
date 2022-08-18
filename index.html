@@ -71,7 +71,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div></div>
+                        <div>
+                            <div class="mainContent2-Text2 textani3">
+                                <span><h1>22</h1></span>
+                            </div>
+                        </div>
                         
                     </div>
 
@@ -93,6 +97,7 @@ const rightgoldLine = document.querySelector('.rightgold');
 const menuwrap = document.querySelector('.menu');
 const portfoliobox = document.querySelector('.portfoliobox');
 const mainContent2Text1 = document.querySelector('.mainContent2-Text1');
+const mainContent2Text2 = document.querySelector('.mainContent2-Text2');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
@@ -114,6 +119,8 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 portfoliobox.classList.add('boxheight100');
                 mainContent2Text1.classList.remove('textani');
                 mainContent2Text1.classList.add('textani2');
+                mainContent2Text2.classList.remove('textani3');
+                mainContent2Text2.classList.add('textani4');
 
                 
             }
@@ -142,6 +149,10 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             menuwrap.style.top = '130px';
             portfoliobox.classList.remove('boxheight100');
             portfoliobox.classList.add('boxheight0');
+            mainContent2Text1.classList.add('textani');
+            mainContent2Text1.classList.remove('textani2');
+            mainContent2Text2.classList.remove('textani4');
+            mainContent2Text2.classList.add('textani3');
             
             
         }

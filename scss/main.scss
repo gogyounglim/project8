@@ -202,7 +202,6 @@ img{width: 100%; height: 100%;}
   
 }
 
-
 .portfoliobox{
   width: 100%;
   background-color: wheat;
@@ -213,6 +212,8 @@ img{width: 100%; height: 100%;}
   z-index: 999;
   
 }
+
+
 .mainContent2-Text1{ 
   height: 30%;
   transform: translate(-50%,-50%);
@@ -223,6 +224,21 @@ img{width: 100%; height: 100%;}
     color: black;
     font-size: 300px;
     font-weight: 900;
+  }
+}
+.mainContent2-Text2{
+  height: 30%;
+  transform: translate(-50%,-50%);
+
+  left: 83%;
+  position: absolute;
+  z-index: -10;
+  
+  h1{
+    color: white;
+    font-size: 300px;
+    font-weight: 900;
+    
   }
 }
 .textani{
@@ -236,6 +252,19 @@ img{width: 100%; height: 100%;}
   transition: 0.5s;
   transition-delay: 2s;
 }
+.textani3{
+  opacity: 0;
+  top: 10%;
+  transition: 0.5s;
+}
+.textani4{
+  opacity: 1;
+  top: 40%;
+  transition: 0.5s;
+  transition-delay: 2s;
+}
+
+
 
 
 
