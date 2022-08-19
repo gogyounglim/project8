@@ -34,7 +34,7 @@
             <div class="bottom Line">
     
             </div>
-            <div class="rightgold">
+            <div class="rightgold tran-dealy">
 
             </div>
         </div>
@@ -48,9 +48,9 @@
                     <div class="mainContent">
                         <div class="mainContent-Text">
                             <h1>
-                                <span class="glitch" data-text="WEB"></span><br>
-                                <span class="glitch" data-text="DESIGN"></span><br>
-                                <span class="glitch" data-text="PORTFOLIO"></span>
+                                <span class="glitchText" data-text="WEB"></span><br>
+                                <span class="glitchText" data-text="DESIGN"></span><br>
+                                <span class="glitchText" data-text="PORTFOLIO"></span>
                             </h1><br>
                             <h2>FRONT-END DEVELOPER</h2>
                         </div>
@@ -67,7 +67,14 @@
                         <div>
                             <div class="portfolioWrap">
                                 <div class="portfoliobox boxheight0">
-                                    
+                                    <span><h2>SHOSE</h2></span>
+                                    <div class="imgWrap">
+                                        <div><img src="img/main/shoes.jpg" alt=""></div>
+                                        <div><img src="img/main/3-1.jpg" alt=""></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -98,12 +105,14 @@ const menuwrap = document.querySelector('.menu');
 const portfoliobox = document.querySelector('.portfoliobox');
 const mainContent2Text1 = document.querySelector('.mainContent2-Text1');
 const mainContent2Text2 = document.querySelector('.mainContent2-Text2');
+const portfolioboxText = document.querySelector('.portfoliobox >span');
+const img2 = document.querySelector('.imgWrap');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
     delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
     if (delta < 0) {
-        if (!(num == 12)) {
+        if (!(num == 20)) {
             num++;
             if (num <= 5) {
                 maincontent.classList.remove('c');
@@ -112,7 +121,7 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 maincontent.classList.add('b');
                 leftgoldLine.style.height='50%';
                 leftgoldLine.style.top='20%';
-                rightgoldLine.style.top = '30%'
+                rightgoldLine.style.top = '30%';
                 rightgoldLine.style.height = '50px';
                 menuwrap.style.top = '80px';
                 portfoliobox.classList.remove('boxheight0');
@@ -121,22 +130,37 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 mainContent2Text1.classList.add('textani2');
                 mainContent2Text2.classList.remove('textani3');
                 mainContent2Text2.classList.add('textani4');
+                portfolioboxText.style.opacity='1';
 
                 
             }
-            else if(num>1){
+            else if(num <= 10 && num > 5){
+                img2.classList.remove('img');
+                img2.classList.add('img2')
+                rightgoldLine.style.top = '35%';
+                rightgoldLine.classList.remove('tran-dealy');
+                rightgoldLine.classList.add('tran-dealy');
+                                
+            }
+            else if(num > 10 && num <=15 ){
+                img2.classList.remove('img2');
+                img2.classList.add('img3');
+                rightgoldLine.style.top = '40%';
                 
+            }
+            else if(num > 15 && num <=20){
+                img2.classList.remove('img3');
+                img2.classList.add('img4');
+                rightgoldLine.style.top = '45%';
             }
             
         }
-        if ((num == 12) && (idx < elMainCon.length)) {
-            idx++;
-        }
+
     } else {
         if (!(idx == 0)) {
             idx--;
         }
-        if ((num > 0) && (idx == 0)) {
+        if ((num > 0) && (idx == 0) && (num <=5) ) {
             num--;
             maincontent.classList.remove('b')
             scroll1.classList.remove('a')
@@ -153,8 +177,28 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             mainContent2Text1.classList.remove('textani2');
             mainContent2Text2.classList.remove('textani4');
             mainContent2Text2.classList.add('textani3');
-            
-            
+            portfolioboxText.style.opacity='0';
+            rightgoldLine.classList.remove('tran-dealy2');
+            rightgoldLine.classList.add('tran-dealy');
+        }
+        else if(num > 5 && num <=10){
+            num--;
+            img2.classList.remove('img2');
+            img2.classList.add('img');
+            rightgoldLine.style.top = '30%';
+
+        }
+        else if(num > 10 && num <=15){
+            num--;
+            img2.classList.remove('img3');
+            img2.classList.add('img2');
+            rightgoldLine.style.top = '35%';
+        }
+        else if(num > 15 && num <=20){
+            num--;
+            img2.classList.remove('img4');
+            img2.classList.add('img3');
+            rightgoldLine.style.top = '40%';
         }
     }
 
