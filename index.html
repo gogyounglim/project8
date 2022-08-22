@@ -66,13 +66,13 @@
                         </div>
                         <div>
                             <div class="portfolioWrap">
-                                <div class="portfoliobox boxheight0">
-                                    <span><h2>SHOSE</h2></span>
+                                <div class="portfoliobox boxheight0 portfolioboxTrans">
+                                    <span><h2 class="portfolio-Text">SHOSE</h2></span>
                                     <div class="imgWrap">
-                                        <div><img src="img/main/shoes.jpg" alt=""></div>
-                                        <div><img src="img/main/3-1.jpg" alt=""></div>
-                                        <div></div>
-                                        <div></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/3-1.jpg" alt=""></div>
+                                        <div class="imgWrap-Img b"></div>
+                                        <div class="imgWrap-Img b"></div>
                                     </div>
 
                                 </div>
@@ -107,6 +107,7 @@ const mainContent2Text1 = document.querySelector('.mainContent2-Text1');
 const mainContent2Text2 = document.querySelector('.mainContent2-Text2');
 const portfolioboxText = document.querySelector('.portfoliobox >span');
 const img2 = document.querySelector('.imgWrap');
+const portfolioboxText2 = document.querySelector('.portfolio-Text');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
@@ -140,18 +141,21 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 rightgoldLine.style.top = '35%';
                 rightgoldLine.classList.remove('tran-dealy');
                 rightgoldLine.classList.add('tran-dealy');
+                portfolioboxText2.innerHTML = "PS5"
                                 
             }
             else if(num > 10 && num <=15 ){
                 img2.classList.remove('img2');
                 img2.classList.add('img3');
                 rightgoldLine.style.top = '40%';
+                portfolioboxText2.innerHTML = "BOOK"
                 
             }
             else if(num > 15 && num <=20){
                 img2.classList.remove('img3');
                 img2.classList.add('img4');
                 rightgoldLine.style.top = '45%';
+                portfolioboxText2.innerHTML = "GUITAR"
             }
             
         }
@@ -186,19 +190,21 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             img2.classList.remove('img2');
             img2.classList.add('img');
             rightgoldLine.style.top = '30%';
-
+            portfolioboxText2.innerHTML = "SHOSE"
         }
         else if(num > 10 && num <=15){
             num--;
             img2.classList.remove('img3');
             img2.classList.add('img2');
             rightgoldLine.style.top = '35%';
+            portfolioboxText2.innerHTML = "PS5"
         }
         else if(num > 15 && num <=20){
             num--;
             img2.classList.remove('img4');
             img2.classList.add('img3');
             rightgoldLine.style.top = '40%';
+            portfolioboxText2.innerHTML = "BOOK"
         }
     }
 
@@ -222,12 +228,16 @@ $(function(){
     });
 
 
+    $(".imgWrap-Img img").click(function(){
+        $('.portfoliobox').removeClass('portfolioboxTrans');
+        $('.portfoliobox').addClass('e');
+    });
 
 });
 
 
 
-    $(document).on("mousemove", function(event) {
+$(document).on("mousemove", function(event) {
   var window_height = $(this).height();
   var window_width = $(this).width();
   var mouseXpos = event.clientX;
