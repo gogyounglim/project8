@@ -38,7 +38,7 @@
 
             </div>
         </div>
-        <div class="pointer">
+        <div class="pointer pointerColor1">
 
         </div>
 
@@ -64,14 +64,14 @@
                                 <span><h1>20</h1></span>
                             </div>
                         </div>
-                        <div>
-                            <div class="portfolioWrap">
-                                <div class="portfoliobox boxheight0 portfolioboxTrans">
+                        <div class="mainContent2-Flex2 mainContent2-flex2length">
+                            <div class="portfolioWrap portfolioWrapTrans">
+                                <div class="portfoliobox boxheight0 portfolioboxTrans delay1-5s">
                                     <span><h2 class="portfolio-Text">SHOSE</h2></span>
                                     <div class="imgWrap">
                                         <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"><img src="img/main/3-1.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/1.jpg" alt=""></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/boo2.jpg" alt=""></div>
                                         <div class="imgWrap-Img b"></div>
                                     </div>
 
@@ -127,6 +127,8 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 menuwrap.style.top = '80px';
                 portfoliobox.classList.remove('boxheight0');
                 portfoliobox.classList.add('boxheight100');
+                portfoliobox.classList.remove('delay0-5s');
+                portfoliobox.classList.add('delay1-5s');
                 mainContent2Text1.classList.remove('textani');
                 mainContent2Text1.classList.add('textani2');
                 mainContent2Text2.classList.remove('textani3');
@@ -177,6 +179,8 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             menuwrap.style.top = '130px';
             portfoliobox.classList.remove('boxheight100');
             portfoliobox.classList.add('boxheight0');
+            portfoliobox.classList.remove('delay1-5s');
+            portfoliobox.classList.add('delay0-5s');
             mainContent2Text1.classList.add('textani');
             mainContent2Text1.classList.remove('textani2');
             mainContent2Text2.classList.remove('textani4');
@@ -223,14 +227,27 @@ $(function(){
         $('.pointer').fadeOut();
     });
 
-    $('.menu').mouseover(function(){
-        $('.pointer').addClass('pointer2');
+    $('.menu a').mouseover(function(){
+        $('.pointer').addClass('pointerColor2');
+    });
+    $('.menu a').mouseleave(function(){
+        $('.pointer').removeClass('pointerColor2');
+        // $('.pointer').addClass('pointerColor1');
     });
 
 
+
     $(".imgWrap-Img img").click(function(){
-        $('.portfoliobox').removeClass('portfolioboxTrans');
-        $('.portfoliobox').addClass('e');
+        // $('.portfolioWrap').removeClass('portfolioWrapTrans');
+        // $('.portfolioWrap').addClass('e');
+        $('.portfolioWrap').css({'transform' : 'matrix(-1, 0, 0, -1, 0 ,0 )'});
+        $('.portfolioWrap').css({'transition' : 'all 2s cubic-bezier(.42,0,0,1.01)'});
+        // $('.mainContent2-Flex2').css({'width':'100000%','height':'100%'});
+        // $('.mainContent2-Flex2').css('height','100%');
+        $('.mainContent2-Flex2').removeClass('mainContent2-flex2length');
+        $('.mainContent2-Flex2').addClass('mainContent2-flex2-100');
+        $(document).off('mousemove')
+        
     });
 
 });
@@ -243,8 +260,8 @@ $(document).on("mousemove", function(event) {
   var mouseXpos = event.clientX;
   var mouseYpos = event.clientY;
   var YrotateDeg = (window_width / 2 - mouseXpos) * 0.03;
-  var XrotateDeg = (window_height / 2 - mouseYpos) * -0.03;
-  $(".portfolioWrap").css(
+  var XrotateDeg = (window_height / 1 - mouseYpos) * -0.03;
+  $(".portfolioWrapTrans").css(
     "transform",
     "rotateX(" + XrotateDeg + "deg) rotateY(" + YrotateDeg + "deg)"
   );
