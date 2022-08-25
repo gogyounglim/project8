@@ -113,9 +113,10 @@ const portfolioboxText2 = document.querySelector('.portfolio-Text');
 $(window).on('mousewheel DOMMouseScroll', function (e) {
     delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
     if (delta < 0) {
-        if (!(num == 20)) {
+        if (!(num == 4)) {
             num++;
-            if (num <= 5) {
+            if (num<=1) {    
+                scrollstop3()
                 maincontent.classList.remove('c');
                 scroll1.classList.remove('c');
                 scroll1.classList.add('a');
@@ -135,25 +136,28 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 mainContent2Text2.classList.add('textani4');
                 portfolioboxText.style.opacity='1';
 
-                
             }
-            else if(num <= 10 && num > 5){
+            else if(num<=2){
+                scrollstop05();
                 img2.classList.remove('img');
                 img2.classList.add('img2')
                 rightgoldLine.style.top = '35%';
                 rightgoldLine.classList.remove('tran-dealy');
                 rightgoldLine.classList.add('tran-dealy');
                 portfolioboxText2.innerHTML = "PS5"
+
                                 
             }
-            else if(num > 10 && num <=15 ){
+            else if(num <=3 ){
+                scrollstop05();
                 img2.classList.remove('img2');
                 img2.classList.add('img3');
                 rightgoldLine.style.top = '40%';
                 portfolioboxText2.innerHTML = "BOOK"
                 
             }
-            else if(num > 15 && num <=20){
+            else if(num <=4){
+                scrollstop05();
                 img2.classList.remove('img3');
                 img2.classList.add('img4');
                 rightgoldLine.style.top = '45%';
@@ -161,13 +165,14 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             }
             
         }
-
     } else {
         if (!(idx == 0)) {
             idx--;
         }
-        if ((num > 0) && (idx == 0) && (num <=5) ) {
+        if ((num==1) ) {
+            scrollstop3();
             num--;
+            
             maincontent.classList.remove('b')
             scroll1.classList.remove('a')
             scroll1.classList.add('c')
@@ -188,33 +193,69 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             portfolioboxText.style.opacity='0';
             rightgoldLine.classList.remove('tran-dealy2');
             rightgoldLine.classList.add('tran-dealy');
+            
         }
-        else if(num > 5 && num <=10){
+        else if(num==2){
             num--;
+            scrollstop05();
             img2.classList.remove('img2');
             img2.classList.add('img');
             rightgoldLine.style.top = '30%';
             portfolioboxText2.innerHTML = "SHOSE"
         }
-        else if(num > 10 && num <=15){
+        else if(num==3){
             num--;
+            scrollstop05();
             img2.classList.remove('img3');
             img2.classList.add('img2');
             rightgoldLine.style.top = '35%';
             portfolioboxText2.innerHTML = "PS5"
         }
-        else if(num > 15 && num <=20){
+        else if(num==4){
             num--;
+            scrollstop05();
             img2.classList.remove('img4');
             img2.classList.add('img3');
             rightgoldLine.style.top = '40%';
             portfolioboxText2.innerHTML = "BOOK"
         }
+        
     }
 
 console.log('스크롤',num);
 console.log('idx',idx);
+console.log('delta',delta);
+
 })
+
+//스크롤 스탑 함수
+
+//3초
+function scrollstop3(){
+    $('body').on('scroll touchmove mousewheel', function(e){
+        e.preventDefault();
+        e.stopPropagation(); 
+        return false;
+    })
+    setTimeout(function(){
+        $('body').off('scroll touchmove mousewheel');
+        console.log('scroll stop')
+    },3000)
+}
+//0.5초
+function scrollstop05(){
+    $('body').on('scroll touchmove mousewheel', function(e){
+        e.preventDefault();
+        e.stopPropagation(); 
+        return false;
+    })
+    setTimeout(function(){
+        $('body').off('scroll touchmove mousewheel');
+        console.log('scroll stop')
+    },500)
+}
+
+
 
 $(function(){
     var pointSize = $(".pointer").width()/2;
@@ -234,6 +275,7 @@ $(function(){
         $('.pointer').removeClass('pointerColor2');
         // $('.pointer').addClass('pointerColor1');
     });
+
 
 
 
