@@ -67,12 +67,14 @@
                         <div class="mainContent2-Flex2 mainContent2-flex2length">
                             <div class="portfolioWrap portfolioWrapTrans">
                                 <div class="portfoliobox boxheight0 portfolioboxTrans delay1-5s">
-                                    <span><h2 class="portfolio-Text">SHOSE</h2></span>
+                                    <div class="portfolio-TextWrap">
+                                        <p class="portfolio-Text">ShOES</p>
+                                    </div>
                                     <div class="imgWrap">
                                         <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div>
                                         <div class="imgWrap-Img b"><img src="img/main/1.jpg" alt=""></div>
                                         <div class="imgWrap-Img b"><img src="img/main/boo2.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/guitar.jpg" alt=""></div>
                                     </div>
 
                                 </div>
@@ -99,13 +101,14 @@ let idx = 0;
 let delta;
 const scroll1 = document.querySelector('.scroll-container');
 const maincontent = document.querySelector('.mainContent');
-const leftgoldLine = document.querySelector('.leftgold');
-const rightgoldLine = document.querySelector('.rightgold');
-const menuwrap = document.querySelector('.menu');
+const leftgoldLine = document.querySelector('.leftgold'); //왼쪽 골드 선
+const rightgoldLine = document.querySelector('.rightgold'); //오른쪽 골드 선
+const menuwrap = document.querySelector('.menu'); //메뉴
 const portfoliobox = document.querySelector('.portfoliobox');
 const mainContent2Text1 = document.querySelector('.mainContent2-Text1');
 const mainContent2Text2 = document.querySelector('.mainContent2-Text2');
 const portfolioboxText = document.querySelector('.portfoliobox >span');
+const portfolioboxTextWrap = document.querySelector('.portfolio-TextWrap')
 const img2 = document.querySelector('.imgWrap');
 const portfolioboxText2 = document.querySelector('.portfolio-Text');
 
@@ -134,34 +137,45 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 mainContent2Text1.classList.add('textani2');
                 mainContent2Text2.classList.remove('textani3');
                 mainContent2Text2.classList.add('textani4');
-                portfolioboxText.style.opacity='1';
+                // portfolioboxText.style.opacity='1';
+                
 
             }
             else if(num<=2){
-                scrollstop05();
+                scrollstop1();
                 img2.classList.remove('img');
                 img2.classList.add('img2')
                 rightgoldLine.style.top = '35%';
                 rightgoldLine.classList.remove('tran-dealy');
                 rightgoldLine.classList.add('tran-dealy');
-                portfolioboxText2.innerHTML = "PS5"
-
-                                
+                // portfolioboxText2.innerHTML = "PS5"
+                portfolioboxTextWrap.style.height='0%';
+                TextWrapHeight30();
+                TextChangeDelayDown();
+                     
             }
             else if(num <=3 ){
-                scrollstop05();
+                scrollstop1();
                 img2.classList.remove('img2');
                 img2.classList.add('img3');
                 rightgoldLine.style.top = '40%';
-                portfolioboxText2.innerHTML = "BOOK"
+                // portfolioboxText2.innerHTML = "BOOK"
+                portfolioboxTextWrap.style.height='0%';
+                TextWrapHeight30();
+                TextChangeDelayDown();
+
                 
             }
             else if(num <=4){
-                scrollstop05();
+                scrollstop1();
                 img2.classList.remove('img3');
                 img2.classList.add('img4');
                 rightgoldLine.style.top = '45%';
-                portfolioboxText2.innerHTML = "GUITAR"
+                // portfolioboxText2.innerHTML = "GUITAR"
+                portfolioboxTextWrap.style.height='0%';
+                TextWrapHeight30();
+                TextChangeDelayDown();
+
             }
             
         }
@@ -197,27 +211,36 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
         }
         else if(num==2){
             num--;
-            scrollstop05();
+            scrollstop1();
             img2.classList.remove('img2');
             img2.classList.add('img');
             rightgoldLine.style.top = '30%';
-            portfolioboxText2.innerHTML = "SHOSE"
+            portfolioboxTextWrap.style.height='0%';
+            TextWrapHeight30();
+            TextChangeDelayUp();
+            
         }
         else if(num==3){
             num--;
-            scrollstop05();
+            scrollstop1();
             img2.classList.remove('img3');
             img2.classList.add('img2');
             rightgoldLine.style.top = '35%';
-            portfolioboxText2.innerHTML = "PS5"
+            portfolioboxTextWrap.style.height='0%';
+            TextWrapHeight30();
+            TextChangeDelayUp();
+
         }
         else if(num==4){
             num--;
-            scrollstop05();
+            scrollstop1();
             img2.classList.remove('img4');
             img2.classList.add('img3');
             rightgoldLine.style.top = '40%';
-            portfolioboxText2.innerHTML = "BOOK"
+            portfolioboxTextWrap.style.height='0%';
+            TextWrapHeight30();
+            TextChangeDelayUp();
+
         }
         
     }
@@ -242,8 +265,8 @@ function scrollstop3(){
         console.log('scroll stop')
     },3000)
 }
-//0.5초
-function scrollstop05(){
+//1초
+function scrollstop1(){
     $('body').on('scroll touchmove mousewheel', function(e){
         e.preventDefault();
         e.stopPropagation(); 
@@ -252,8 +275,58 @@ function scrollstop05(){
     setTimeout(function(){
         $('body').off('scroll touchmove mousewheel');
         console.log('scroll stop')
-    },500)
+    },1000)
 }
+function TextWrapHeight30(){
+setTimeout(function(){
+    portfolioboxTextWrap.style.height='30%';
+},800)
+}
+
+function TextChangeDelayDown(){
+    for(i=1; i<5; i++){
+        if(i==num){
+            if(i==2){
+                setTimeout(function(){
+                    portfolioboxText2.innerHTML = "PS5"
+                },800);
+            }
+            else if(i==3){
+                setTimeout(function(){
+                    portfolioboxText2.innerHTML = "BOOK"
+                },800);
+            }
+            else if(i==4){
+                setTimeout(function(){
+                    portfolioboxText2.innerHTML = "GUITAR"
+                },800);
+            }
+        }
+    }
+}
+
+function TextChangeDelayUp(){
+    for(i=1; i<5; i++){
+        if(i==num){
+            if(i==1){
+                setTimeout(function(){
+                    portfolioboxText2.innerHTML = "SHOES"
+                },800);
+            }
+            else if(i==2){
+                setTimeout(function(){
+                    portfolioboxText2.innerHTML = "PS5"
+                },800);
+            }
+            else if(i==3){
+                setTimeout(function(){
+                    portfolioboxText2.innerHTML = "BOOK"
+                },800);
+            }
+        }
+    }
+}
+
 
 
 
