@@ -38,7 +38,7 @@
 
             </div>
         </div>
-        <div class="pointer pointerColor1">
+        <div class="pointer">
 
         </div>
 
@@ -64,17 +64,15 @@
                                 <span><h1>20</h1></span>
                             </div>
                         </div>
-                        <div class="mainContent2-Flex2 mainContent2-flex2length">
-                            <div class="portfolioWrap portfolioWrapTrans">
-                                <div class="portfoliobox boxheight0 portfolioboxTrans delay1-5s">
-                                    <div class="portfolio-TextWrap">
-                                        <p class="portfolio-Text">ShOES</p>
-                                    </div>
+                        <div>
+                            <div class="portfolioWrap">
+                                <div class="portfoliobox boxheight0 portfolioboxTrans">
+                                    <span><h2 class="portfolio-Text">SHOSE</h2></span>
                                     <div class="imgWrap">
                                         <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"><img src="img/main/1.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"><img src="img/main/boo2.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"><img src="img/main/guitar.jpg" alt=""></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/3-1.jpg" alt=""></div>
+                                        <div class="imgWrap-Img b"></div>
+                                        <div class="imgWrap-Img b"></div>
                                     </div>
 
                                 </div>
@@ -101,25 +99,25 @@ let idx = 0;
 let delta;
 const scroll1 = document.querySelector('.scroll-container');
 const maincontent = document.querySelector('.mainContent');
-const leftgoldLine = document.querySelector('.leftgold'); //왼쪽 골드 선
-const rightgoldLine = document.querySelector('.rightgold'); //오른쪽 골드 선
-const menuwrap = document.querySelector('.menu'); //메뉴
+const leftgoldLine = document.querySelector('.leftgold');
+const rightgoldLine = document.querySelector('.rightgold');
+const menuwrap = document.querySelector('.menu');
 const portfoliobox = document.querySelector('.portfoliobox');
 const mainContent2Text1 = document.querySelector('.mainContent2-Text1');
 const mainContent2Text2 = document.querySelector('.mainContent2-Text2');
 const portfolioboxText = document.querySelector('.portfoliobox >span');
-const portfolioboxTextWrap = document.querySelector('.portfolio-TextWrap')
 const img2 = document.querySelector('.imgWrap');
 const portfolioboxText2 = document.querySelector('.portfolio-Text');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
     delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+
     if (delta < 0) {
-        if (!(num == 4)) {
+        if (!(num == 20)) {
             num++;
-            if (num<=1) {    
-                scrollstop3()
+            if (num <= 5) {
+                // $(window).off('mousewheel DOMMouseScroll');
                 maincontent.classList.remove('c');
                 scroll1.classList.remove('c');
                 scroll1.classList.add('a');
@@ -131,62 +129,50 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 menuwrap.style.top = '80px';
                 portfoliobox.classList.remove('boxheight0');
                 portfoliobox.classList.add('boxheight100');
-                portfoliobox.classList.remove('delay0-5s');
-                portfoliobox.classList.add('delay1-5s');
                 mainContent2Text1.classList.remove('textani');
                 mainContent2Text1.classList.add('textani2');
                 mainContent2Text2.classList.remove('textani3');
                 mainContent2Text2.classList.add('textani4');
-                // portfolioboxText.style.opacity='1';
+                portfolioboxText.style.opacity='1';
                 
+                setTimeout(function(){
+                    $(window).on('mousewheel');
+                    console.log('set타임아웃 실행')
+                },3000);
+
 
             }
-            else if(num<=2){
-                scrollstop1();
+            else if(num <= 10 && num > 5){
                 img2.classList.remove('img');
                 img2.classList.add('img2')
                 rightgoldLine.style.top = '35%';
                 rightgoldLine.classList.remove('tran-dealy');
                 rightgoldLine.classList.add('tran-dealy');
-                // portfolioboxText2.innerHTML = "PS5"
-                portfolioboxTextWrap.style.height='0%';
-                TextWrapHeight30();
-                TextChangeDelayDown();
-                     
+                portfolioboxText2.innerHTML = "PS5"
+                                
             }
-            else if(num <=3 ){
-                scrollstop1();
+            else if(num > 10 && num <=15 ){
                 img2.classList.remove('img2');
                 img2.classList.add('img3');
                 rightgoldLine.style.top = '40%';
-                // portfolioboxText2.innerHTML = "BOOK"
-                portfolioboxTextWrap.style.height='0%';
-                TextWrapHeight30();
-                TextChangeDelayDown();
-
+                portfolioboxText2.innerHTML = "BOOK"
                 
             }
-            else if(num <=4){
-                scrollstop1();
+            else if(num > 15 && num <=20){
                 img2.classList.remove('img3');
                 img2.classList.add('img4');
                 rightgoldLine.style.top = '45%';
-                // portfolioboxText2.innerHTML = "GUITAR"
-                portfolioboxTextWrap.style.height='0%';
-                TextWrapHeight30();
-                TextChangeDelayDown();
-
+                portfolioboxText2.innerHTML = "GUITAR"
             }
             
         }
+
     } else {
         if (!(idx == 0)) {
             idx--;
         }
-        if ((num==1) ) {
-            scrollstop3();
+        if ((num > 0) && (idx == 0) && (num <=5) ) {
             num--;
-            
             maincontent.classList.remove('b')
             scroll1.classList.remove('a')
             scroll1.classList.add('c')
@@ -198,8 +184,6 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             menuwrap.style.top = '130px';
             portfoliobox.classList.remove('boxheight100');
             portfoliobox.classList.add('boxheight0');
-            portfoliobox.classList.remove('delay1-5s');
-            portfoliobox.classList.add('delay0-5s');
             mainContent2Text1.classList.add('textani');
             mainContent2Text1.classList.remove('textani2');
             mainContent2Text2.classList.remove('textani4');
@@ -207,128 +191,33 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             portfolioboxText.style.opacity='0';
             rightgoldLine.classList.remove('tran-dealy2');
             rightgoldLine.classList.add('tran-dealy');
-            
         }
-        else if(num==2){
+        else if(num > 5 && num <=10){
             num--;
-            scrollstop1();
             img2.classList.remove('img2');
             img2.classList.add('img');
             rightgoldLine.style.top = '30%';
-            portfolioboxTextWrap.style.height='0%';
-            TextWrapHeight30();
-            TextChangeDelayUp();
-            
+            portfolioboxText2.innerHTML = "SHOSE"
         }
-        else if(num==3){
+        else if(num > 10 && num <=15){
             num--;
-            scrollstop1();
             img2.classList.remove('img3');
             img2.classList.add('img2');
             rightgoldLine.style.top = '35%';
-            portfolioboxTextWrap.style.height='0%';
-            TextWrapHeight30();
-            TextChangeDelayUp();
-
+            portfolioboxText2.innerHTML = "PS5"
         }
-        else if(num==4){
+        else if(num > 15 && num <=20){
             num--;
-            scrollstop1();
             img2.classList.remove('img4');
             img2.classList.add('img3');
             rightgoldLine.style.top = '40%';
-            portfolioboxTextWrap.style.height='0%';
-            TextWrapHeight30();
-            TextChangeDelayUp();
-
+            portfolioboxText2.innerHTML = "BOOK"
         }
-        
     }
 
 console.log('스크롤',num);
 console.log('idx',idx);
-console.log('delta',delta);
-
 })
-
-//스크롤 스탑 함수
-
-//3초
-function scrollstop3(){
-    $('body').on('scroll touchmove mousewheel', function(e){
-        e.preventDefault();
-        e.stopPropagation(); 
-        return false;
-    })
-    setTimeout(function(){
-        $('body').off('scroll touchmove mousewheel');
-        console.log('scroll stop')
-    },3000)
-}
-//1초
-function scrollstop1(){
-    $('body').on('scroll touchmove mousewheel', function(e){
-        e.preventDefault();
-        e.stopPropagation(); 
-        return false;
-    })
-    setTimeout(function(){
-        $('body').off('scroll touchmove mousewheel');
-        console.log('scroll stop')
-    },1000)
-}
-function TextWrapHeight30(){
-setTimeout(function(){
-    portfolioboxTextWrap.style.height='30%';
-},800)
-}
-
-function TextChangeDelayDown(){
-    for(i=1; i<5; i++){
-        if(i==num){
-            if(i==2){
-                setTimeout(function(){
-                    portfolioboxText2.innerHTML = "PS5"
-                },800);
-            }
-            else if(i==3){
-                setTimeout(function(){
-                    portfolioboxText2.innerHTML = "BOOK"
-                },800);
-            }
-            else if(i==4){
-                setTimeout(function(){
-                    portfolioboxText2.innerHTML = "GUITAR"
-                },800);
-            }
-        }
-    }
-}
-
-function TextChangeDelayUp(){
-    for(i=1; i<5; i++){
-        if(i==num){
-            if(i==1){
-                setTimeout(function(){
-                    portfolioboxText2.innerHTML = "SHOES"
-                },800);
-            }
-            else if(i==2){
-                setTimeout(function(){
-                    portfolioboxText2.innerHTML = "PS5"
-                },800);
-            }
-            else if(i==3){
-                setTimeout(function(){
-                    portfolioboxText2.innerHTML = "BOOK"
-                },800);
-            }
-        }
-    }
-}
-
-
-
 
 $(function(){
     var pointSize = $(".pointer").width()/2;
@@ -341,28 +230,14 @@ $(function(){
         $('.pointer').fadeOut();
     });
 
-    $('.menu a').mouseover(function(){
-        $('.pointer').addClass('pointerColor2');
+    $('.menu').mouseover(function(){
+        $('.pointer').addClass('pointer2');
     });
-    $('.menu a').mouseleave(function(){
-        $('.pointer').removeClass('pointerColor2');
-        // $('.pointer').addClass('pointerColor1');
-    });
-
-
 
 
     $(".imgWrap-Img img").click(function(){
-        // $('.portfolioWrap').removeClass('portfolioWrapTrans');
-        // $('.portfolioWrap').addClass('e');
-        $('.portfolioWrap').css({'transform' : 'matrix(-1, 0, 0, -1, 0 ,0 )'});
-        $('.portfolioWrap').css({'transition' : 'all 2s cubic-bezier(.42,0,0,1.01)'});
-        // $('.mainContent2-Flex2').css({'width':'100000%','height':'100%'});
-        // $('.mainContent2-Flex2').css('height','100%');
-        $('.mainContent2-Flex2').removeClass('mainContent2-flex2length');
-        $('.mainContent2-Flex2').addClass('mainContent2-flex2-100');
-        $(document).off('mousemove')
-        
+        $('.portfoliobox').removeClass('portfolioboxTrans');
+        $('.portfoliobox').addClass('e');
     });
 
 });
@@ -375,8 +250,8 @@ $(document).on("mousemove", function(event) {
   var mouseXpos = event.clientX;
   var mouseYpos = event.clientY;
   var YrotateDeg = (window_width / 2 - mouseXpos) * 0.03;
-  var XrotateDeg = (window_height / 1 - mouseYpos) * -0.03;
-  $(".portfolioWrapTrans").css(
+  var XrotateDeg = (window_height / 2 - mouseYpos) * -0.03;
+  $(".portfolioWrap").css(
     "transform",
     "rotateX(" + XrotateDeg + "deg) rotateY(" + YrotateDeg + "deg)"
   );
