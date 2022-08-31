@@ -18,13 +18,13 @@
             <source src="./img/main/bg-video4.mp4">
         </video>
         <div class="menu">
-            <a href="#" class="Home-button">
+            <a onclick="homepage()" class="Home-button">
                <span>HOME</span>
             </a>
-            <a href="#" class="Work-button">
+            <a onclick="workpage()" class="Work-button">
                 <span>WORK</span>    
             </a>
-            <a href="#" class="About-button">
+            <a href="" class="About-button">
                <span>ABOUT</span>
             </a>
         </div>
@@ -80,10 +80,36 @@
                                         <p class="portfolio-Text">ShOES</p>
                                     </div>
                                     <div class="imgWrap">
-                                        <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"><img src="img/main/1.jpg" alt=""></div>
+                                        <!-- <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div> -->
+                                        <div class="glitch imgWrap-Img b">
+                                            <div class="glitch-img glitchimg1-1"></div>
+                                            <div class="glitch-img glitchimg1"></div>
+                                            <div class="glitch-img glitchimg1"></div>
+                                            <div class="glitch-img glitchimg1"></div>
+                                        </div>
+                                        <div class="glitch imgWrap-Img b">
+                                            <div class="glitch-img glitchimg2-1"></div>
+                                            <div class="glitch-img glitchimg2"></div>
+                                            <div class="glitch-img glitchimg2"></div>
+                                            <div class="glitch-img glitchimg2"></div>
+                                        </div>
+                                        <div class="glitch imgWrap-Img  b">
+                                            <div class="glitch-img glitchimg3-1"></div>
+                                            <div class="glitch-img glitchimg3"></div>
+                                            <div class="glitch-img glitchimg3"></div>
+                                            <div class="glitch-img glitchimg3"></div>
+                                        </div>
+                                        <div class="glitch imgWrap-Img glitchimg4 b">
+                                            <div class="glitch-img glitchimg4-1"></div>
+                                            <div class="glitch-img glitchimg4"></div>
+                                            <div class="glitch-img glitchimg4"></div>
+                                            <div class="glitch-img glitchimg4"></div>
+                                        </div>
+
+
+                                        <!-- <div class="imgWrap-Img b"><img src="img/main/1.jpg" alt=""></div>
                                         <div class="imgWrap-Img b"><img src="img/main/boo2.jpg" alt=""></div>
-                                        <div class="imgWrap-Img b"><img src="img/main/guitar.jpg" alt=""></div>
+                                        <div class="imgWrap-Img b"><img src="img/main/guitar.jpg" alt=""></div> -->
                                     </div>
 
                                 </div>
@@ -120,6 +146,8 @@ const portfolioboxText = document.querySelector('.portfoliobox >span');
 const portfolioboxTextWrap = document.querySelector('.portfolio-TextWrap')
 const img2 = document.querySelector('.imgWrap');
 const portfolioboxText2 = document.querySelector('.portfolio-Text');
+const workbutton = document.querySelector('.Work-button');
+const homebutton = document.querySelector('.Home-button');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
@@ -146,8 +174,8 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
                 mainContent2Text1.classList.add('textani2');
                 mainContent2Text2.classList.remove('textani3');
                 mainContent2Text2.classList.add('textani4');
-                // portfolioboxText.style.opacity='1';
-                
+                workbutton.style.opacity="1";
+                homebutton.style.opacity="0.3";
 
             }
             else if(num<=2){
@@ -195,14 +223,13 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
         if ((num==1) ) {
             scrollstop3();
             num--;
-            
             maincontent.classList.remove('b')
             scroll1.classList.remove('a')
             scroll1.classList.add('c')
             maincontent.classList.add('c')
             leftgoldLine.style.height='60px';
             leftgoldLine.style.top='40px';
-            rightgoldLine.style.top = '0px'
+            rightgoldLine.style.top = '0px';
             rightgoldLine.style.height = '200px';
             menuwrap.style.top = '130px';
             portfoliobox.classList.remove('boxheight100');
@@ -213,9 +240,12 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             mainContent2Text1.classList.remove('textani2');
             mainContent2Text2.classList.remove('textani4');
             mainContent2Text2.classList.add('textani3');
-            portfolioboxText.style.opacity='0';
+            // portfolioboxText.style.opacity='0';
             rightgoldLine.classList.remove('tran-dealy2');
             rightgoldLine.classList.add('tran-dealy');
+            workbutton.style.opacity="0.3";
+            homebutton.style.opacity="1";
+
             
         }
         else if(num==2){
@@ -257,8 +287,65 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
 console.log('스크롤',num);
 console.log('idx',idx);
 console.log('delta',delta);
-
 })
+
+function workpage(){
+    scrollstop3()
+    maincontent.classList.remove('c');
+    scroll1.classList.remove('c');
+    scroll1.classList.add('a');
+    maincontent.classList.add('b');
+    leftgoldLine.style.height='50%';
+    leftgoldLine.style.top='20%';
+    rightgoldLine.style.top = '30%';
+    rightgoldLine.style.height = '50px';
+    menuwrap.style.top = '80px';
+    portfoliobox.classList.remove('boxheight0');
+    portfoliobox.classList.add('boxheight100');
+    portfoliobox.classList.remove('delay0-5s');
+    portfoliobox.classList.add('delay1-5s');
+    mainContent2Text1.classList.remove('textani');
+    mainContent2Text1.classList.add('textani2');
+    mainContent2Text2.classList.remove('textani3');
+    mainContent2Text2.classList.add('textani4');
+    num=1;
+    workbutton.style.opacity="1";
+    homebutton.style.opacity="0.3";
+    
+
+}
+function homepage(){
+    maincontent.classList.remove('b')
+    scroll1.classList.remove('a')
+    scroll1.classList.add('c')
+    maincontent.classList.add('c')
+    leftgoldLine.style.height='60px';
+    leftgoldLine.style.top='40px';
+    rightgoldLine.style.top = '0px'
+    rightgoldLine.style.height = '200px';
+    menuwrap.style.top = '130px';
+    portfoliobox.classList.remove('boxheight100');
+    portfoliobox.classList.add('boxheight0');
+    portfoliobox.classList.remove('delay1-5s');
+    portfoliobox.classList.add('delay0-5s');
+    mainContent2Text1.classList.add('textani');
+    mainContent2Text1.classList.remove('textani2');
+    mainContent2Text2.classList.remove('textani4');
+    mainContent2Text2.classList.add('textani3');
+    // portfolioboxText.style.opacity='0';
+    rightgoldLine.classList.remove('tran-dealy2');
+    rightgoldLine.classList.add('tran-dealy');
+    num=0;
+    workbutton.style.opacity="0.3";
+    homebutton.style.opacity="1";
+    
+    img2.classList.remove('img4');
+    img2.classList.remove('img3');
+    img2.classList.remove('img2');
+    img2.classList.add('img');
+    rightgoldLine.style.top = '30%';
+    portfolioboxTextWrap.style.height='0%';
+}
 
 //스크롤 스탑 함수
 
@@ -359,9 +446,7 @@ $(function(){
     });
 
 
-
-
-    $(".imgWrap-Img img").click(function(){
+    $(".glitch-img").click(function(){
         // $('.portfolioWrap').removeClass('portfolioWrapTrans');
         // $('.portfolioWrap').addClass('e');
         $('.portfolioWrap').css({'transform' : 'matrix(-1, 0, 0, -1, 0 ,0 )'});
@@ -374,6 +459,24 @@ $(function(){
         
     });
 
+    $(".Work-button").mouseover(function(){
+        $(".Work-button").css("opacity","1");
+    });
+    $(".Work-button").mouseleave(function(){
+        if(num<1){
+            $(".Work-button").css("opacity","0.3");
+        }
+    });
+    $(".Home-button").mouseover(function(){
+        $(".Home-button").css("opacity","1");
+    });
+    $(".Home-button").mouseleave(function(){
+        if(num!=0){
+            $(".Home-button").css("opacity","0.3");
+        }
+    });
+
+    
 });
 
 
@@ -390,6 +493,19 @@ $(document).on("mousemove", function(event) {
     "rotateX(" + XrotateDeg + "deg) rotateY(" + YrotateDeg + "deg)"
   );
 });
+$(document).on("mousemove", function(event) {
+  var window_height = $(this).height();
+  var window_width = $(this).width();
+  var mouseXpos = event.clientX;
+  var mouseYpos = event.clientY;
+  var YrotateDeg = (window_width / 2 - mouseXpos) * 0.03;
+  var XrotateDeg = (window_height / 1 - mouseYpos) * -0.03;
+  $(".portfolio-Text").css(
+    "transform",
+    "rotateX(" + XrotateDeg + "deg) rotateY(" + YrotateDeg + "deg)"
+  );
+});
+
 
 
 </script>
