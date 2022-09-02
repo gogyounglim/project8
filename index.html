@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>portfolio</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/public.js"></script>
 
 
 </head>
@@ -148,6 +149,7 @@ const img2 = document.querySelector('.imgWrap');
 const portfolioboxText2 = document.querySelector('.portfolio-Text');
 const workbutton = document.querySelector('.Work-button');
 const homebutton = document.querySelector('.Home-button');
+const atrans = document.querySelector('.a');
 
 
 $(window).on('mousewheel DOMMouseScroll', function (e) {
@@ -157,6 +159,7 @@ $(window).on('mousewheel DOMMouseScroll', function (e) {
             num++;
             if (num<=1) {    
                 scrollstop3()
+                // atrans.style.transform = 'matrix(1,0,0,1,0,-550)';
                 maincontent.classList.remove('c');
                 scroll1.classList.remove('c');
                 scroll1.classList.add('a');
@@ -427,23 +430,7 @@ function TextChangeDelayUp(){
 
 
 $(function(){
-    var pointSize = $(".pointer").width()/2;
-    $("body").mousemove(function(e){    
-        $('.pointer').css("top", e.pageY-pointSize);
-        $('.pointer').css("left", e.pageX-pointSize);
-        $('.pointer').fadeIn();
-    });
-    $("body").on("mouseleave", function(){
-        $('.pointer').fadeOut();
-    });
 
-    $('.menu a').mouseover(function(){
-        $('.pointer').addClass('pointerColor2');
-    });
-    $('.menu a').mouseleave(function(){
-        $('.pointer').removeClass('pointerColor2');
-        // $('.pointer').addClass('pointerColor1');
-    });
 
 
     $(".glitch-img").click(function(){

@@ -121,15 +121,6 @@ img{width: 100%; height: 100%;}
   height: 20%;
 }
 
-
-
-
-  
-
-  
-
-
-
 .Line{
   z-index: 1000;
 }
@@ -186,230 +177,23 @@ img{width: 100%; height: 100%;}
   
 }
 .mainbackground{
-    position: absolute;
-    opacity: 0.9;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
+  position: absolute;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
 }
 .mainContent-container{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden
 }
 
 .scroll-container{
-    position: relative;
-    height: calc(150vh - 195px);
-}
-
-
-
-.mainContent{
-    position: absolute;
-    // transition: 1s;
-    width: 100%;
-    height: 100vh;
-    .mainContent-Text{
-        position: absolute;
-        bottom: 120px;
-        left: 127px;
-        color: white;
-        >h1{
-            font-size: 120px;
-            position: relative;
-        }
-        >h2{
-          font-size: 15px;
-          font-weight: bold;
-          margin-left: 10px;
-          color: #b28949;
-        }
-
-    }
-}
-.mainContent-page2{
-  width: 50%;
-  height: calc(100% - 260px);
-  background-color: white;
-  position: absolute;
-  right: 0;
-  bottom: calc(100% - 60px);
-  
-}
-.mainContent2{
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: calc(100vh - 195px);
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  >div:nth-child(1){
-    width: 20%;
-    height: 100vh;
-  }
-  >div:nth-child(2){
-
-    position: relative;
-  }
-  >div:nth-child(3){
-    width: 20%;
-    height: 100vh;
-  }
-  
-}
-.mainContent2-flex2length{
-  width: 60%;
-  height: 50vh;
-}
-.mainContent2-flex2-100{
-  width: 100%;
-  height: 100vh;
-  transform:scale(1.5,1.3) ;
-    transition: 0.5s ease-in-out;
-  transition-delay: 2s;
-}
-
-
-.portfolioWrap{
-  width: 100%;
-  height: 100%;
-  // background-color: wheat;
-  
   position: relative;
-  
-}
-
-
-.portfolioboxTrans{
-  transform: translate(-50%,-50%);
-  transition: 0.5s;
-  
-}
-.delay1-5s{
-  transition-delay: 1.5s;
-}
-.delay0-5s{
-  transition-delay: 0.5s;
-}
-
-.e{transform: matrix(-1, 0, 0, -1, 0 ,0 );
-   transition: all 2s cubic-bezier(.42,0,0,1.01);  
-  }
-  
-
-
-.portfoliobox{
-  width: 100%;
-  
-  
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 999;
-  overflow: hidden;
-  >span{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    transition: 1s;
-    z-index: 999;
-
-  }
-  
-}
-.imgWrap{
-  position: relative;
-  height: 100%;
-  transition: 0.5s ease-in-out;
-  >div{
-    width: 100%;
-    height: 100%;
-    // transform: matrix(-1, 0, 0, -1, 0, 0);
-  }
-  >div:nth-child(1){
-    height: 100.2%;
-  }
-}
-
-
-.mainContent2-Text1{ 
-  height: 30%;
-  transform: translate(-50%,-50%);
-  left: 15%;
-  position: absolute;
-  font-family: 'Anton', sans-serif;
-  
-  h1{
-    color: black;
-    font-size: 300px;
-    font-weight: 900;
-  }
-}
-.portfolio-Text{
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
-    opacity: 1;
-    z-index: 999;
-    transform: translate(-50%,-50%);
-    top: 20%;
-    left: 0%;
-    position: absolute;
-    // transition: 0.5s;
-    z-index: 999;
-    width:100%;
-    height: 80%;
-    text-align: center;
-    margin-left: 80px;
-    margin: 0 auto;
-  
-}
-.portfolio-TextWrap{
-  overflow: hidden;
-  transform: translate(-50%,-50%);
-  top: 48%;
-  left: 50%;
-  position: absolute;
-  transition: 0.7s;
-  z-index: 999;
-  width: 30%;
-  height: 25%;
-  
-  
-
-  
-}
-
-
-
-.mainContent2-Text2{
-  height: 30%;
-  transform: translate(-50%,-50%);
-  left: 83%;
-  position: absolute;
-  z-index: -10;
-  font-family: 'Anton', sans-serif;
-  >p{
-    transition:all 2s;
-  }
-  
-  
-  h1{
-    color: #b28949;
-    font-size: 300px;
-    font-weight: 900;
-    
-  }
+  height: calc(150vh - 195px);
 }
 .textani{
   opacity: 0;
@@ -435,14 +219,413 @@ img{width: 100%; height: 100%;}
 }
 
 
-.glitchText{
-  color:white;
-  font-size:100px;
-  position:relative;
-  width:700px;
-  margin:0 auto;
-  z-index: 1;
+.e{transform: matrix(-1, 0, 0, -1, 0 ,0 );
+   transition: all 2s cubic-bezier(.42,0,0,1.01);  
+  }
+
+@media(min-width:768px) and (max-width:1024px){
+  .delay0-5s{
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  .delay1-5s{
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+    transition-delay:1.5s;
+  }
+  .mainContent{
+    position: absolute;
+    // transition: 1s;
+    width: 100%;
+    height: 100vh;
+    .mainContent-Text{
+        position: absolute;
+        bottom: 100px;
+        left: 67px;
+        color: white;
+        >h1{
+            font-size: 90px;
+            position: relative;
+        }
+        >h2{
+          font-size: 15px;
+          font-weight: bold;
+          margin-left: 10px;
+          color: #b28949;
+        }
+    }
+  }
+  .mainContent-page2{
+    width: 50%;
+    height: calc(100% - 260px);
+    background-color: white;
+    position: absolute;
+    right: 0;
+    bottom: calc(100% - 60px);
+    
+  }
+  .mainContent2{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: calc(100vh - 195px);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    >div:nth-child(1){
+      width: 20%;
+      height: 100vh;
+    }
+    >div:nth-child(2){
+
+      position: relative;
+    }
+    >div:nth-child(3){
+      width: 20%;
+      height: 100vh;
+    }
+    
+  }
+  .mainContent2-flex2length{
+    width: 60%;
+    height: 50vh;
+  }
+  .mainContent2-flex2-100{
+    width: 100%;
+    height: 100vh;
+    transform:scale(1.5,1.3) ;
+      transition: 0.5s ease-in-out;
+    transition-delay: 2s;
+  }
+  .portfolioWrap{
+    width: 100%;
+    height: 100%;
+    // background-color: wheat;
+  
+    position: relative;
+    
+  }
+  .portfolioboxTrans{
+    transform: translate(-50%,-50%);
+  }
+
+  .portfoliobox{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    overflow: hidden;
+    
+    >span{
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      position: absolute;
+      color: white;
+      font-size: 40px;
+      opacity: 0;
+      transition: 1s;
+      z-index: 999;
+    }
+  }
+  .imgWrap{
+    position: relative;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    >div{
+      width: 100%;
+      height: 100%;
+      // transform: matrix(-1, 0, 0, -1, 0, 0);
+    }
+    >div:nth-child(1){
+      height: 100.2%;
+    }
+  }
+
+  .mainContent2-Text1{ 
+    height: 30%;
+    transform: translate(-50%,-50%);
+    left: 15%;
+    position: absolute;
+    font-family: 'Anton', sans-serif;
+    top: 50%;
+    
+    h1{
+      color: black;
+      font-size: 250px;
+      font-weight: 900;
+    }
+  }
+  .portfolio-Text{
+      color: white;
+      font-size: 80px;
+      font-weight: bold;
+      opacity: 1;
+      z-index: 999;
+      transform: translate(-50%,-50%);
+      top: 20%;
+      left: 0%;
+      position: absolute;
+      // transition: 0.5s;
+      z-index: 999;
+      width:100%;
+      height: 80%;
+      text-align: center;
+      margin-left: 80px;
+      margin: 0 auto;
+    
+  }
+  .portfolio-TextWrap{
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    top: 48%;
+    left: 50%;
+    position: absolute;
+    transition: 0.7s;
+    z-index: 999;
+    width: 60%;
+    height: 25%;  
+  }
+
+  .mainContent2-Text2{
+    height: 30%;
+    transform: translate(-50%,-50%);
+    left: 83%;
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    font-family: 'Anton', sans-serif;
+    >p{
+      transition:all 2s;
+    }
+    
+    h1{
+      color: #b28949;
+      font-size: 250px;
+      font-weight: 900;
+    }
+  }
+  .glitchText{
+    color:white;
+    font-size:80px;
+    position:relative;
+    width:700px;
+    margin:0 auto;
+    z-index: 1;
+  }
 }
+
+
+
+
+
+@media(min-width:1024px){
+
+  
+  .mainContent{
+    position: absolute;
+    // transition: 1s;
+    width: 100%;
+    height: 100vh;
+    .mainContent-Text{
+        position: absolute;
+        bottom: 120px;
+        left: 127px;
+        color: white;
+        >h1{
+            font-size: 80px;
+            position: relative;
+        }
+        >h2{
+          font-size: 15px;
+          font-weight: bold;
+          margin-left: 10px;
+          color: #b28949;
+        }
+
+    }
+}
+  .mainContent-page2{
+    width: 50%;
+    height: calc(100% - 260px);
+    background-color: white;
+    position: absolute;
+    right: 0;
+    bottom: calc(100% - 60px);
+    
+  }
+  .mainContent2{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: calc(100vh - 195px);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    >div:nth-child(1){
+      width: 20%;
+      height: 100vh;
+    }
+    >div:nth-child(2){
+
+      position: relative;
+    }
+    >div:nth-child(3){
+      width: 20%;
+      height: 100vh;
+    }
+    
+  }
+  .mainContent2-flex2length{
+    width: 60%;
+    height: 50vh;
+  }
+  .mainContent2-flex2-100{
+    width: 100%;
+    height: 100vh;
+    transform:scale(1.5,1.3) ;
+      transition: 0.5s ease-in-out;
+    transition-delay: 2s;
+  }
+  .portfolioWrap{
+    width: 100%;
+    height: 100%;
+    // background-color: wheat;
+    
+    position: relative;
+    
+  }
+  .portfolioboxTrans{
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+  }
+
+  .portfoliobox{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    overflow: hidden;
+    >span{
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      position: absolute;
+      color: white;
+      font-size: 40px;
+      opacity: 0;
+      transition: 1s;
+      z-index: 999;
+    }
+  }
+  .imgWrap{
+    position: relative;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    >div{
+      width: 100%;
+      height: 100%;
+      // transform: matrix(-1, 0, 0, -1, 0, 0);
+    }
+    >div:nth-child(1){
+      height: 100.2%;
+    }
+  }
+
+  .mainContent2-Text1{ 
+    height: 30%;
+    transform: translate(-50%,-50%);
+    left: 15%;
+    position: absolute;
+    font-family: 'Anton', sans-serif;
+    
+    h1{
+      color: black;
+      font-size: 300px;
+      font-weight: 900;
+    }
+  }
+  .portfolio-Text{
+      color: white;
+      font-size: 80px;
+      font-weight: bold;
+      opacity: 1;
+      z-index: 999;
+      transform: translate(-50%,-50%);
+      top: 20%;
+      left: 0%;
+      position: absolute;
+      // transition: 0.5s;
+      z-index: 999;
+      width:100%;
+      height: 80%;
+      text-align: center;
+      margin-left: 80px;
+      margin: 0 auto;
+    
+  }
+  .portfolio-TextWrap{
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    top: 48%;
+    left: 50%;
+    position: absolute;
+    transition: 0.7s;
+    z-index: 999;
+    width: 30%;
+    height: 25%;  
+  }
+
+  .mainContent2-Text2{
+    height: 30%;
+    transform: translate(-50%,-50%);
+    left: 83%;
+    position: absolute;
+    z-index: -10;
+    font-family: 'Anton', sans-serif;
+    >p{
+      transition:all 2s;
+    }
+    
+    h1{
+      color: #b28949;
+      font-size: 300px;
+      font-weight: 900;
+    }
+  }
+  .glitchText{
+    color:white;
+    font-size:100px;
+    position:relative;
+    width:700px;
+    margin:0 auto;
+    z-index: 1;
+  }
+  .tran-dealy{
+    transition-delay: 1.5s;
+    transition: 0.5s ease-in-out; 
+  }
+  .tran-dealy2{
+    transition-delay: 0.5s;
+    transition: 0.5s ease-in-out;
+  }
+
+}
+
+
+
+
+
+//text 글리치효과
+
+
 @keyframes noise-anim{
   $steps:20;
   @for $i from 0 through $steps{
@@ -484,7 +667,6 @@ img{width: 100%; height: 100%;}
   clip:rect(0,900px,0,0); 
   animation:noise-anim-2 3s infinite linear alternate-reverse;
 }
-
 
 
 
