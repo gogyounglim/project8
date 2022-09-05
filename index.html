@@ -443,6 +443,11 @@ $(function(){
         $('.mainContent2-Flex2').removeClass('mainContent2-flex2length');
         $('.mainContent2-Flex2').addClass('mainContent2-flex2-100');
         $(document).off('mousemove')
+        setTimeout(function(){
+            location.href = "sub1.html";
+        console.log('scroll stop')
+    },3000)
+        
         
     });
 
@@ -465,7 +470,26 @@ $(function(){
 
     
 });
+$(function(){
+        var pointSize = $(".pointer").width()/2;
+        $("body").mousemove(function(e){    
+            $('.pointer').css("top", e.pageY-pointSize);
+            $('.pointer').css("left", e.pageX-pointSize);
+            $('.pointer').fadeIn();
+        });
+        $("body").on("mouseleave", function(){
+            $('.pointer').fadeOut();
+        });
 
+        $('.menu a').mouseover(function(){
+            $('.pointer').addClass('pointerColor2');
+        });
+        $('.menu a').mouseleave(function(){
+            $('.pointer').removeClass('pointerColor2');
+            // $('.pointer').addClass('pointerColor1');
+        });
+        
+    });
 
 
 $(document).on("mousemove", function(event) {

@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 html{width: 100%; height: 100%; }
-body{ width: 100%; max-width: 100%; height: 100%; background-color: rgb(0, 0, 0);}
+body{ width: 100%; max-width: 100%; height: 100%; background-color: rgb(0, 0, 0); 
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+ display: none;
+}
 * {box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth;}
 ul,li,ol{list-style: none;}
 a{text-decoration: none; color: white; margin-right: 30px; font-weight: bolder;cursor: none;  }
@@ -14,9 +20,8 @@ img{width: 100%; height: 100%;}
 }
 
 .menu{
-    top: 130px;
+    top: 80px;
     position: fixed;
-    top: 130px;
     left: 140px;
     transition: 0.5s;
     transition-delay: 1.3s;
@@ -82,5 +87,180 @@ img{width: 100%; height: 100%;}
     height: 100%;
     overflow: hidden;
   }
+  .sub1img{
+    width: 100%;
+    
+  }
 
+  .Line{
+    z-index: 1000;
+  }
+  .right{
+      height: calc(100% - 40px);
+      width: 1px;
+      background: hsla(0,0%,73%,.3);
+      position: fixed;
+      right: 40px;
+      top: 0px;
+      z-index: 1000;
+  }
+  .left{
+      height: calc(100% - 40px);
+      width: 1px;
+      background: hsla(0,0%,73%,.3);
+      position: fixed;
+      left: 40px;
+      top: 0px;
+  }
+  .bottom{
+      width: calc(100% - 82px);
+      position: fixed;
+      height: 1px;
+      background: hsla(0,0%,73%,.3);
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .leftgold{
+      position: absolute;
+      background: #b28949;
+      width: 3px;
+      height: 484px;
+      left: 39px;
+      // transform: translateY(-50%);
+      top:180px;
+      z-index: 1000;
+      transition: 0.5s ease-in-out;
+      transition-delay: 1.5s; 
+  }
+  .rightgold{
+    position: absolute;
+    background: #b28949;
+    width: 3px;
+    height: 167.339px;
+    right: 40px;
+    top: 0%;
+    z-index: 1000;
+    transform: translate3d(0px, 000px, 0px);
+    transition: 0.4s;
+  }
+
+  .container1{
+    width: 100%;
+    height: 700px;
+  }
   
+  .mainImg{
+    background: url(../img/main/shoesmain3.jpg) no-repeat 0% 50%;;
+    position: relative;
+    top: -100px;
+    left: -50px;
+    width: calc(100% + 50px * 2);
+    height: calc(100% + 100px * 2);
+    background-size: cover;
+    // transform: translateZ(0) rotate(180deg);
+    // background-blend-mode: multiply;
+    // background-color: #b28949;
+    background-position: 50%;
+    z-index: 70;
+
+  }
+  #mainScrollWrap{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+  .scrollContent{
+    height: 100%;
+    transform: translate3d(0px, 000px, 0px);
+    transition: 0.4s;
+  }
+  .introCon{
+    width: 100%;
+    height: 800px;
+    
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    >div:nth-child(1){
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background-color: white;
+      text-align: center;
+      font-size: 30px; 
+      overflow: hidden;
+      font-family: 'Anton', sans-serif;
+      .introText{
+        h1{
+          margin-top: 200px;
+        }
+        p{
+          color: #999;
+          font-size: 20px;
+        }
+        
+      }
+
+      .introMoveNum{
+        position: absolute;
+        font-size: 200px;
+        font-family: 'Anton', sans-serif;
+        color: #b28949;
+        top: 450px;
+        left: 80px;
+        // transform: translate3d(0px, -300px, 0px);
+      }
+    }
+    >div:nth-child(2){
+      width: 50%;
+      height: 100%;
+    }
+    
+  }
+  .introCon2{
+    
+    p{
+      font-size: 20px;
+      line-height: 40px;
+      color: white;
+      margin: 0 auto;
+      max-width: 60%;
+      margin-top: 600px;  
+      width: 100%;
+    }
+    
+
+  }
+  .con1{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    >div:nth-child(1)
+    {
+      width: 25%;
+      height: 100%;
+    }
+    >div:nth-child(3)
+    {
+      width: 25%;
+      height: 100%;
+    }
+    >div:nth-child(2){
+      width: 50%;
+      height: 100%;
+      position: relative;
+    }
+  }
+  .computerImg{
+    position: absolute;
+    top: 95px;
+    left: 100px;
+    width: 75%;
+    height: 56%;
+
+
+
+  }
+

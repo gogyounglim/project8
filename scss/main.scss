@@ -121,11 +121,12 @@ img{width: 100%; height: 100%;}
   height: 20%;
 }
 
-.Line{
-  z-index: 1000;
-}
+
 .mainWrap{
     height: 100%;
+}
+.Line{
+  z-index: 1000;
 }
 .right{
     height: calc(100% - 40px);
@@ -223,7 +224,7 @@ img{width: 100%; height: 100%;}
    transition: all 2s cubic-bezier(.42,0,0,1.01);  
   }
 
-@media(min-width:768px) and (max-width:1024px){
+@media(min-width:312px) and (max-width:1024px){
   .delay0-5s{
     transform: translate(-50%,-50%);
     transition: 0.5s;
@@ -424,7 +425,16 @@ img{width: 100%; height: 100%;}
 
 
 @media(min-width:1024px){
-
+  .delay0-5s{
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  .delay1-5s{
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+    transition-delay:1.5s;
+  }
   
   .mainContent{
     position: absolute;
@@ -503,7 +513,7 @@ img{width: 100%; height: 100%;}
   }
   .portfolioboxTrans{
     transform: translate(-50%,-50%);
-    transition: 0.5s;
+    // transition: 0.5s;
   }
 
   .portfoliobox{

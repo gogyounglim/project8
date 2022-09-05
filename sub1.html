@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/sub1.css">
     
 </head>
-<body>
+<body >
     <div id="wrap">
         <div class="menu">
             <a onclick="homepage()" class="Home-button">
@@ -26,10 +26,113 @@
         <div class="pointer pointerColor1">
 
         </div>
+         <div id="line">
+            <div class="leftgold">
+    
+            </div>
+            <div class="left Line">
+    
+            </div>
+            <div class="right Line">
+    
+            </div>
+            <div class="bottom Line">
+    
+            </div>
+            <div class="rightgold tran-dealy">
 
-        <div id="mainscroll">
+            </div>
+        </div>
+
+
+        <div id="mainScrollWrap">
+            <div class="scrollContent">   
+                <div class="mainImg">
+
+                </div>
+                <div class="introCon">
+                    <div>
+                        <span class="introText">
+                            <h1>Shoes Shopping Mall</h1> 
+                            <p>my first portfolio</p>
+                        </span>
+                        <span class="introMoveNum"><h1>2022</h1></span>
+                    </div>
+                    <div class="introCon2">
+                        <p>저의 첫 포트폴리오 신발 쇼핑물 입니다.
+                        처음으로 vscode를 사용하여 html,css,jQuery,javascript를 사용하여
+                        열심히 만들어본 사이트입니다. </p>
+                    </div>
+                </div>
+                <div class="con1">
+                    <div></div>
+                    <div>
+                        <img src="img/main/computer.png" alt="">
+                        <div class="computerImg">
+                            <img src="img/main/port1.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
 
         </div>
     </div>
+
+
+    <script>
+    $(function(){
+        var pointSize = $(".pointer").width()/2;
+        $("body").mousemove(function(e){    
+            $('.pointer').css("top", e.pageY-pointSize);
+            $('.pointer').css("left", e.pageX-pointSize);
+            $('.pointer').fadeIn();
+        });
+        $("body").on("mouseleave", function(){
+            $('.pointer').fadeOut();
+        });
+
+        $('.menu a').mouseover(function(){
+            $('.pointer').addClass('pointerColor2');
+        });
+        $('.menu a').mouseleave(function(){
+            $('.pointer').removeClass('pointerColor2');
+            // $('.pointer').addClass('pointerColor1');
+        });
+        
+    });
+    let num = 0;
+    let idx = 0;
+    let delta;
+    let scrollcon = document.querySelector('.scrollContent');
+    
+
+    $(window).on('mousewheel DOMMouseScroll', function (e) {
+    delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+        if (delta < 0) {
+            if (!(num == 40) && delta < 0) {
+                num++;
+                if (num>=1) {    
+                    $(".scrollContent").css("transform","translate3d(0px," +num*-100+"px,"+ "0px)");
+                    $(".rightgold").css("transform","translate3d(0px," +num*30+"px,"+ "0px)");
+                } 
+            }
+        } else {
+            if (!(idx == 0)) {
+                idx--;
+            }
+            if ((num>=1) ) {
+                num--;
+                $(".scrollContent").css("transform","translate3d(0px," +num*-100+"px,"+ "0px)");
+                $(".rightgold").css("transform","translate3d(0px," +num*30+"px,"+ "0px)");
+            }
+        }
+    console.log('스크롤',num);
+    console.log('idx',idx);
+    console.log('delta',delta);
+    })
+
+
+    </script>
 </body>
 </html>
