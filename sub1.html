@@ -61,7 +61,9 @@
                     <div class="introCon2">
                         <p>저의 첫 포트폴리오 신발 쇼핑물 입니다.
                         처음으로 vscode를 사용하여 html,css,jQuery,javascript를 사용하여
-                        열심히 만들어본 사이트입니다. </p>
+                        열심히 만들어본 사이트입니다. 
+                        처음 디자인도 구상을 해보고,새로운 언어도 사용해보며 정말 재미있게 만들어본
+                        쇼핑물 사이트입니다<div class=""></div></p>
                     </div>
                 </div>
                 <div class="con1">
@@ -71,9 +73,34 @@
                         <div class="computerImg">
                             <img src="img/main/port1.jpeg" alt="">
                         </div>
+                        <p class="con1Text">사진 클릭시 사이트로 이동합니다.</p>
+                        
                     </div>
                     <div></div>
                 </div>
+                <div id="sliderWrap">
+                    <div>
+
+                    </div>
+                    <div>
+                        <div class="slider">
+                            <div class="slider-inner">
+                                <div class="slider-item"><img src="img/sub1/sub1-3.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub1/sub1-2.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub1/sub1-1.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub1/sub1-4.jpeg" alt=""></div>
+                                <div class="slider-item"></div>
+                                <div class="slider-item"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
             </div>
 
         </div>
@@ -99,6 +126,10 @@
             $('.pointer').removeClass('pointerColor2');
             // $('.pointer').addClass('pointerColor1');
         });
+
+        $(".computerImg img").click(function(){
+            location.href = "https://gogyounglim.github.io/project2/";
+        })
         
     });
     let num = 0;
@@ -132,6 +163,49 @@
     console.log('delta',delta);
     })
 
+    //슬라이더 
+    
+    let slider = document.querySelector(".slider")
+    let innerSlider = document.querySelector(".slider-inner")
+    let pressed = false
+    let startx
+    let x
+
+    slider.addEventListener("mousedown", e => {
+        pressed = true
+        startx = e.offsetX - innerSlider.offsetLeft
+        slider.style.cursor = "grabbing"
+    })
+
+
+
+    window.addEventListener("mouseup", () => {
+        pressed = false
+    })
+
+    slider.addEventListener("mousemove", e => {
+        if (!pressed) return
+        e.preventDefault()
+        x = e.offsetX
+
+        innerSlider.style.left = `${140 - startx}px`
+        checkboundary()
+    })
+
+    function checkboundary() {
+        let outer = slider.getBoundingClientRect()
+        let inner = innerSlider.getBoundingClientRect()
+
+        if (parseInt(innerSlider.style.left) > 0) {
+            // innerSlider.style.left = "30%"
+        } else if (inner.right < outer.right) {
+            // innerSlider.style.left = `-${inner.width - outer.width}px`;
+            innerSlider.style.left ="30%"
+        }
+    }
+
+    
+    
 
     </script>
 </body>
