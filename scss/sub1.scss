@@ -3,7 +3,37 @@
 html{width: 100%; height: 100%; }
 body{ width: 100%; max-width: 100%; height: 100%; background-color: rgb(0, 0, 0); 
   -ms-overflow-style: none;
+  cursor: none;
 }
+.loadingWrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // display: none;
+  opacity: 0;
+  overflow: hidden;
+  background: none;
+  >div{
+    width: 100%;
+    height: 33.33%;
+    background-color: white;
+    z-index: 99999;
+  }
+
+  >div:nth-child(2){
+    transform: matrix(1, 0, 0, 1, -2000, 0);
+  }
+
+}
+.matrix0{
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: 3s ease-in-out;
+}
+.matrix2000{
+  transform: matrix(1, 0, 0, 1, 2000, 0);
+}
+
 
 ::-webkit-scrollbar {
  display: none;
@@ -33,8 +63,11 @@ img{width: 100%; height: 100%;}
   
       
     }
-    >a:nth-child(2){
+    >a:nth-child(1){
       opacity: 0.3;
+    }
+    >a:nth-child(2){
+      opacity: 1;
     }
     >a:nth-child(3){
       opacity: 0.3;
@@ -174,7 +207,32 @@ img{width: 100%; height: 100%;}
     height: 100%;
     transform: translate3d(0px, 000px, 0px);
     transition: 0.4s;
+    >h3{
+      position: absolute;
+      transform: translate(-50%,-50%)  rotate(180deg);
+      top: 50%;
+      left: 50%;
+      font-size: 80px;
+      color: white;
+      z-index: 999;
+      // font-family: 'Anton', sans-serif;
+    }
   }
+
+  .introCon1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    text-align: center;
+    font-size: 30px; 
+    overflow: hidden;
+    font-family: 'Anton', sans-serif;
+    transform: matrix(1, 0, 0, 1, 0, 500);
+    opacity: 0;
+    transition: 2s;
+  }
+
   .introCon{
     width: 100%;
     height: 800px;
@@ -182,15 +240,8 @@ img{width: 100%; height: 100%;}
     position: relative;
     display: flex;
     flex-direction: row;
-    >div:nth-child(1){
-      position: relative;
-      width: 50%;
-      height: 100%;
-      background-color: white;
-      text-align: center;
-      font-size: 30px; 
-      overflow: hidden;
-      font-family: 'Anton', sans-serif;
+    
+      
       .introText{
         h1{
           margin-top: 200px;
@@ -209,15 +260,17 @@ img{width: 100%; height: 100%;}
         color: #b28949;
         top: 450px;
         left: 80px;
+        transform: matrix(1, 0, 0, 1, 0, 200);
+        transition: 4s;
         // transform: translate3d(0px, -300px, 0px);
       }
     }
     >div:nth-child(2){
       width: 50%;
       height: 100%;
-    }
+   }
     
-  }
+  
   .introCon2{
     
     p{
@@ -228,6 +281,9 @@ img{width: 100%; height: 100%;}
       max-width: 60%;
       margin-top: 600px;  
       width: 100%;
+      transform: matrix(1, 0, 0, 1, 0, 100);
+      opacity: 0;
+      transition: 3s ease-in-out;
     }
     
 
@@ -238,7 +294,11 @@ img{width: 100%; height: 100%;}
     height: 700px;
     display: flex;
     flex-direction: row;
+    transform: matrix(1, 0, 0, 1, 0, 300);
+    opacity: 0;
+    transition: 1s ease-in-out; 
     >div:nth-child(1)
+    
     {
       width: 25%;
       height: 100%;
@@ -282,15 +342,18 @@ img{width: 100%; height: 100%;}
       width: 50%;
       height: 100%;
       background-color: white;
+      margin-left: 600px;
+      transition: 1s;
     }
   }
   .slider {
     position: absolute;
-    left: 0%;
-    top: 30%;
+    left: 50%;
+    top: 20%;
     width: 100%;
-    height: 500px;
+    height: 650px;
     overflow: hidden;
+    transition: 1s ease-in-out;
     
   }
   
@@ -309,8 +372,71 @@ img{width: 100%; height: 100%;}
   
   .slider-item {
     height: 100%;
-    width: 700px;
+    width: 900px;
     background-color: white;
-    border: 2px solid rgb(228, 228, 228);
+    border: 1px solid rgb(243, 242, 242);
   }
+
+  .nextimgWrap{
+    height: 600px;
+    width: 100%;
+    margin-top: 300px;
+    position: relative;
+    >h3{
+      color: white;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 15%;
+      left: 50%;
+      text-align: center;
+      z-index: 1;
+      font-size: 50px;
+      padding: 10px 20px;
+      
+      >span:nth-child(1){
+        background-color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+      }
+      >span:nth-child(2){
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+      }
+      >span:nth-child(3){
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+      }
+      >span:nth-child(4){
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 2px;
+      }
+
+
+    }
+  }
+  .nextimg{
+    background-image: url(../img/main/1.jpg);
+    width: calc(100% + 50px * 2);
+    height: calc(100% + 100px * 2);
+    position: absolute;
+    top: -100px;
+    left: 50px;
+    background-size: cover;
+    background-color: rgba(85, 84, 84, 0.6);
+    background-blend-mode: multiply;
+    background-position: 50%;
+    transition: background-color .3s ease-in-out;
+  }
+
 

@@ -12,11 +12,6 @@
 </head>
 <body >
     <div id="wrap">
-        <div class="loadingWrap">
-            <div class="matrix2000"></div>
-            <div></div>
-            <div class="matrix2000"></div>
-        </div>
         <div class="menu">
             <a onclick="homepage()" class="Home-button">
                <span>HOME</span>
@@ -243,12 +238,6 @@ function checkboundary() {
     innerSlider.style.left = `-${inner.width - outer.width}px`
     // innerSlider.style.left='-2800px'
   }
-}
-function homepage(){
-    $('.loadingWrap').css('display','block');
-    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
-    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
-    // $('.loadingWrap > div:nth-child(1)').addClass('.matrix0')
 }
 
     
