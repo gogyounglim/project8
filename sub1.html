@@ -14,7 +14,7 @@
     <div id="wrap">
         <div class="loadingWrap">
             <div class="matrix2000"></div>
-            <div></div>
+            <div class="matrix-2000"></div>
             <div class="matrix2000"></div>
         </div>
         <div class="menu">
@@ -239,16 +239,39 @@ function checkboundary() {
 
   if (parseInt(innerSlider.style.left) > 0) {
     innerSlider.style.left = "30%"
-  } else if (inner.right < outer.right) {
+  } else if (innerSlider.style.left>='3800px') {
+    // innerSlider.style.left = `-${inner.width - outer.width}px`
     innerSlider.style.left = `-${inner.width - outer.width}px`
-    // innerSlider.style.left='-2800px'
+
+
+    
   }
 }
 function homepage(){
-    $('.loadingWrap').css('display','block');
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
-    // $('.loadingWrap > div:nth-child(1)').addClass('.matrix0')
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+
+    setTimeout(function(){
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix-2000');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
+        $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
+        $('.scrollContent > h3').css('display','none');
+        
+    },1400)
+    setTimeout(function(){
+        location.href = "index.html";     
+    },2200)
+    
 }
 
     
