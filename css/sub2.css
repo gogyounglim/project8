@@ -221,7 +221,7 @@ img {
 }
 
 .mainImg {
-  background: url(../img/main/shoesmain3.jpg) no-repeat 0% 50%;
+  background: url(../img/sub2/guitarmain2.jpg) no-repeat 0% 50%;
   position: relative;
   top: -100px;
   left: -50px;
@@ -255,7 +255,7 @@ img {
 
 .introCon1 {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-color: white;
   text-align: center;
@@ -297,6 +297,10 @@ img {
   height: 100%;
 }
 
+.introCon2 {
+  width: 50%;
+  height: 100%;
+}
 .introCon2 p {
   font-size: 20px;
   line-height: 40px;
@@ -341,11 +345,14 @@ img {
 
 .computerImg {
   position: absolute;
-  top: 95px;
-  left: 100px;
-  width: 75%;
-  height: 56%;
-  opacity: 0.8;
+  top: 92px;
+  left: 90px;
+  width: 80.5%;
+  height: 58%;
+  opacity: 1;
+}
+.computerImg > img {
+  border-radius: 5px;
 }
 
 #sliderWrap {
@@ -445,11 +452,12 @@ img {
 }
 
 .nextimg {
-  background-image: url(../img/main/guitar.jpg);
+  background-image: url(../img/main/1.jpg);
   width: calc(100% + 100px);
   height: calc(100% + 200px);
   position: absolute;
   top: -100px;
+  left: 50px;
   background-size: cover;
   background-color: rgba(85, 84, 84, 0.6);
   background-blend-mode: multiply;

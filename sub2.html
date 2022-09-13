@@ -7,11 +7,16 @@
     <title>Document</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="js/public.js"></script>
-    <link rel="stylesheet" href="css/sub1.css">
+    <link rel="stylesheet" href="css/sub2.css">
     
 </head>
 <body >
     <div id="wrap">
+        <div class="loadingWrap">
+            <div class="matrix2000"></div>
+            <div class="matrix-2000"></div>
+            <div class="matrix2000"></div>
+        </div>
         <div class="menu">
             <a onclick="homepage()" class="Home-button">
                <span>HOME</span>
@@ -47,24 +52,25 @@
 
         <div id="mainScrollWrap">
             <div class="scrollContent">   
-                <h3>SHOES</h3>
+                <h3>GUITAR</h3>
                 <div class="mainImg">
 
                 </div>
                 <div class="introCon">
                     <div class="introCon1">
                         <span class="introText">
-                            <h1>Shoes Shopping Mall</h1> 
-                            <p>my first portfolio</p>
+                            <h1>TAYLOR  GUITAR </h1> 
+                            <p>portfolio</p>
                         </span>
                         <span class="introMoveNum"><h1>2022</h1></span>
                     </div>
                     <div class="introCon2">
-                        <p>저의 첫 포트폴리오 신발 쇼핑물 입니다.
-                        처음으로 vscode를 사용하여 html,css,jQuery,javascript를 사용하여
-                        열심히 만들어본 사이트입니다. 
-                        처음 디자인도 구상을 해보고,새로운 언어도 사용해보며 정말 재미있게 만들어본
-                        쇼핑물 사이트입니다<div class=""></div></p>
+                        <p>저의 두번째 포트폴리오 TAYLOR GUITAR 소개 사이트입니다 .
+                        기타에 관심이 많고 취미생활을 하고있어서, 제가 제일 좋아하는 기타 브랜드인
+                        YAYLOR 사의 기타를 소개사이트를 만들었습니다. 
+                        자바스크립트, 제이쿼리를 사용하여, 처음으로 마우스 스크롤시 움직이는 효과를 사용해봤습니다.
+                        효과를 넣으며, 많이 공부를 한 포트폴리오 입니다.<div class=""></div></p>
+                        
                     </div>
                 </div>
                 <div class="con1">
@@ -72,7 +78,7 @@
                     <div>
                         <img src="img/main/computer.png" alt="">
                         <div class="computerImg">
-                            <img src="img/main/port1.jpeg" alt="">
+                            <img src="img/sub2/1.jpeg" alt="">
                         </div>
                         <p class="con1Text">사진 클릭시 사이트로 이동합니다.</p>
                         
@@ -85,12 +91,13 @@
                     <div>
                         <div class="slider">
                             <div class="slider-inner">
-                                <div class="slider-item"><img src="img/sub1/sub1-3.jpeg" alt=""></div>
-                                <div class="slider-item"><img src="img/sub1/sub1-2.jpeg" alt=""></div>
-                                <div class="slider-item"><img src="img/sub1/sub1-1.jpeg" alt=""></div>
-                                <div class="slider-item"><img src="img/sub1/sub1-4.jpeg" alt=""></div>
-                                <div class="slider-item"></div>
-                                <div class="slider-item"></div>
+                                <div class="slider-item"><img src="img/sub2/1.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub2/2.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub2/3.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub2/4.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub2/5.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub2/6.jpeg" alt=""></div>
+                                <div class="slider-item"><img src="img/sub2/7.jpeg" alt=""></div>
                             </div>
                         </div>
                     </div>
@@ -145,7 +152,7 @@
         });
 
         $(".computerImg img").click(function(){
-            location.href = "https://gogyounglim.github.io/project2/";
+            location.href = "https://gogyounglim.github.io/project4/";
         })
 
         
@@ -222,22 +229,51 @@
     slider.addEventListener("mousemove", e => {
   if (!pressed) return
   e.preventDefault()
-  x = e.offsetX
+  x = e.offsetX-100
 
-  innerSlider.style.left = `${x - startx}px`
+  innerSlider.style.left = `${x - startx}px `
+  
   checkboundary()
 })
+
+
+
 
 function checkboundary() {
   let outer = slider.getBoundingClientRect()
   let inner = innerSlider.getBoundingClientRect()
 
   if (parseInt(innerSlider.style.left) > 0) {
-    innerSlider.style.left = "30%"
+    innerSlider.style.left = "200";
   } else if (inner.right < outer.right) {
-    innerSlider.style.left = `-${inner.width - outer.width}px`
-    // innerSlider.style.left='-2800px'
+    // innerSlider.style.left = `-${inner.width - outer.width}px`
   }
+}
+function homepage(){
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+
+    setTimeout(function(){
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix-2000');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
+        $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
+        $('.scrollContent > h3').css('display','none');
+        
+    },1400)
+    setTimeout(function(){
+        location.href = "index.html";     
+    },2200)
+    
 }
 
     

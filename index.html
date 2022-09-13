@@ -78,7 +78,7 @@
                             <div class="portfolioWrap portfolioWrapTrans">
                                 <div class="portfoliobox boxheight0 portfolioboxTrans delay1-5s">
                                     <div class="portfolio-TextWrap">
-                                        <p class="portfolio-Text">ShOES</p>
+                                        <p class="portfolio-Text">SHOES</p>
                                     </div>
                                     <div class="imgWrap">
                                         <!-- <div class="imgWrap-Img b"><img src="img/main/shoes.jpg" alt=""></div> -->
@@ -387,17 +387,17 @@ function TextChangeDelayDown(){
         if(i==num){
             if(i==2){
                 setTimeout(function(){
-                    portfolioboxText2.innerHTML = "PS5"
+                    portfolioboxText2.innerHTML = "GUITAR"
                 },800);
             }
             else if(i==3){
                 setTimeout(function(){
-                    portfolioboxText2.innerHTML = "BOOK"
+                    portfolioboxText2.innerHTML = "PS5"
                 },800);
             }
             else if(i==4){
                 setTimeout(function(){
-                    portfolioboxText2.innerHTML = "GUITAR"
+                    portfolioboxText2.innerHTML = "BOOK"
                 },800);
             }
         }
@@ -414,12 +414,12 @@ function TextChangeDelayUp(){
             }
             else if(i==2){
                 setTimeout(function(){
-                    portfolioboxText2.innerHTML = "PS5"
+                    portfolioboxText2.innerHTML = "GUITAR"
                 },800);
             }
             else if(i==3){
                 setTimeout(function(){
-                    portfolioboxText2.innerHTML = "BOOK"
+                    portfolioboxText2.innerHTML = "PS5"
                 },800);
             }
         }
@@ -444,7 +444,20 @@ $(function(){
         $('.mainContent2-Flex2').addClass('mainContent2-flex2-100');
         $(document).off('mousemove')
         setTimeout(function(){
-            location.href = "sub1.html";
+            if(num==1){
+                location.href = "sub1.html";
+            }
+            else if(num==2){
+                location.href = "sub2.html";
+            }
+            else if(num==3){
+                location.href = "sub3.html";
+            }
+            else if(num==4){
+                location.href = "sub4.html";
+            }
+            
+            
         console.log('scroll stop')
     },3000)
         

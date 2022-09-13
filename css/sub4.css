@@ -221,7 +221,7 @@ img {
 }
 
 .mainImg {
-  background: url(../img/main/shoesmain3.jpg) no-repeat 0% 50%;
+  background: url(../img/sub4/boo3.jpg) no-repeat 0% 50%;
   position: relative;
   top: -100px;
   left: -50px;
@@ -255,7 +255,7 @@ img {
 
 .introCon1 {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-color: white;
   text-align: center;
@@ -297,13 +297,17 @@ img {
   height: 100%;
 }
 
+.introCon2 {
+  width: 50%;
+  height: 100%;
+}
 .introCon2 p {
   font-size: 20px;
   line-height: 40px;
   color: white;
   margin: 0 auto;
   max-width: 60%;
-  margin-top: 600px;
+  margin-top: 550px;
   width: 100%;
   transform: matrix(1, 0, 0, 1, 0, 100);
   opacity: 0;
@@ -341,11 +345,14 @@ img {
 
 .computerImg {
   position: absolute;
-  top: 95px;
-  left: 100px;
-  width: 75%;
-  height: 56%;
-  opacity: 0.8;
+  top: 92px;
+  left: 90px;
+  width: 80.5%;
+  height: 58%;
+  opacity: 0.9;
+}
+.computerImg > img {
+  border-radius: 5px;
 }
 
 #sliderWrap {
@@ -385,17 +392,22 @@ img {
   height: 100%;
   width: 200%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 50px;
   pointer-events: none;
   transition: 0.5s;
 }
 
 .slider-item {
-  height: 100%;
+  height: 80%;
   width: 900px;
   background-color: white;
   border: 1px solid rgb(243, 242, 242);
+  position: relative;
+}
+.slider-item > img {
+  width: 100%;
+  height: 100%;
 }
 
 .nextimgWrap {
@@ -445,7 +457,7 @@ img {
 }
 
 .nextimg {
-  background-image: url(../img/main/guitar.jpg);
+  background-image: url(../img/main/boo2.jpg);
   width: calc(100% + 100px);
   height: calc(100% + 200px);
   position: absolute;
