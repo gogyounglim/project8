@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@font-face {
+  font-family: "YUniverse-B";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   width: 100%;
   height: 100%;
@@ -302,6 +308,7 @@ img {
   height: 100%;
 }
 .introCon2 p {
+  font-family: "YUniverse-B";
   font-size: 20px;
   line-height: 40px;
   color: white;
@@ -339,6 +346,7 @@ img {
 }
 
 .con1Text {
+  font-family: "YUniverse-B";
   text-align: center;
   color: #999;
 }
@@ -399,7 +407,7 @@ img {
 }
 
 .slider-item {
-  height: 80%;
+  height: 100%;
   width: 900px;
   background-color: white;
   border: 1px solid rgb(243, 242, 242);

@@ -1,5 +1,11 @@
+@charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
+@font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 html{width: 100%; height: 100%; }
 body{ width: 100%; max-width: 100%; height: 100%; background-color: rgb(0, 0, 0); 
   -ms-overflow-style: none;
@@ -223,6 +229,24 @@ img{width: 100%; height: 100%;}
       // font-family: 'Anton', sans-serif;
     }
   }
+  .scrollText{
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    p{
+      font-weight: 600;
+      color: white;
+    }
+    >span{
+      display: block;
+      height: 30px;
+      width: 1px;
+      background: #fff;
+      margin: 5px auto 0;
+      transition: all .3s ease-out;
+    }
+  }
 
   .introCon1{
     position: relative;
@@ -279,6 +303,7 @@ img{width: 100%; height: 100%;}
   .introCon2{
     
     p{
+      font-family: 'YUniverse-B';
       font-size: 20px;
       line-height: 40px;
       color: white;
@@ -322,6 +347,7 @@ img{width: 100%; height: 100%;}
   .con1Text{
     text-align: center;
     color: #999;
+    font-family: 'YUniverse-B';
   }
   .computerImg{
     position: absolute;

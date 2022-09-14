@@ -102,36 +102,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="nextimgWrap">
+                <div class="nextimgWrap nextimgWrapHeight">
                     <h3>
-                        <span style="width:100%" ></span>
-                        <span style="width:100%" ></span>
-                        <span style="height: 100%;"></span>
-                        <span style="height: 100%;"></span>
+                        <span class="textline1" style="width:100%" ></span>
+                        <span class="textline2" style="width:100%" ></span>
+                        <span class="textline3" style="height: 100%;"></span>
+                        <span class="textline4" style="height: 100%;"></span>
                         PS5
                     </h3>
                     <div class="nextimg">
                         
                     </div>
                 </div>
-
-
             </div>
-
         </div>
     </div>
 
 
     <script>
     $(function(){
+        $('.nextimg').click(function(){
+            $('.nextimgWrap').removeClass('nextimgWrapHeight');
+            $('.nextimgWrap').addClass('nextimgWrapHeight1');
+            $('.textline1').animate({'width':'0%'},1000);
+            $('.textline2').animate({'width':'0%'},1000);
+            $('.textline3').animate({'height':'0%'},1000);
+            $('.textline4').animate({'height':'0%'},1000);
+        });
+
         $('.nextimg').mouseover(function(){
             $('.nextimg').css('background-color','#b28949');
         });
         $('.nextimg').mouseleave(function(){
             $('.nextimg').css('background-color','rgba(85, 84, 84, 0.6)');
         });
-
-
 
         var pointSize = $(".pointer").width()/2;
         $("body").mousemove(function(e){    
@@ -154,11 +158,8 @@
         $(".computerImg img").click(function(){
             location.href = "https://gogyounglim.github.io/project4/";
         })
-
-        
     });
 
-;
     let num = 0;
     let idx = 0;
     let delta;
@@ -268,7 +269,6 @@ function homepage(){
         document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
         $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
         $('.scrollContent > h3').css('display','none');
-        
     },1400)
     setTimeout(function(){
         location.href = "index.html";     
