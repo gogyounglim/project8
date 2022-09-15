@@ -196,12 +196,14 @@ img{width: 100%; height: 100%;}
   }
   
   .mainImg{
-    background: url(../img/sub3/ps5main2.jpg) no-repeat 0% 50%;;
+    background: url(../img/sub3/1.jpg) no-repeat 0% 50%;;
     position: relative;
-    top: -100px;
-    left: -50px;
+    background-blend-mode: multiply;
+    background-color: rgba(178, 137, 73);
+    top: -15px;
+    // left: -50px;
     width: calc(100% + 50px * 2);
-    height: calc(100% + 100px * 2);
+    height: calc(100% + 100px );
     background-size: cover;
     // transform: translateZ(0) rotate(180deg);
     // background-blend-mode: multiply;
@@ -346,8 +348,10 @@ img{width: 100%; height: 100%;}
     }
     
   }
+
+  
   #sliderWrap{
-    margin-top: 150px;
+    margin-top: 300px;
     position: relative;
     width: 100%;
     height: 960px;
@@ -402,11 +406,20 @@ img{width: 100%; height: 100%;}
       height: 100%;
     }
   }
+  .nextimgWrapHeight{
+    height: 600px;
+    margin-top: 300px;
+    // transition: 1s ease-in-out;
+  }
+  .nextimgWrapHeight1{
+    transition: 1s ease-in-out;
+    transition-delay: 1s;
+    height: 100%;
+    margin-top: -300px;
+  }
 
   .nextimgWrap{
-    height: 600px;
     width: 100%;
-    margin-top: 300px;
     position: relative;
     >h3{
       color: white;

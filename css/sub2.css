@@ -227,12 +227,14 @@ img {
 }
 
 .mainImg {
-  background: url(../img/sub2/guitarmain2.jpg) no-repeat 0% 50%;
+  background: url(../img/sub2/guitar.jpg) no-repeat 0% 50%;
   position: relative;
-  top: -100px;
+  background-blend-mode: multiply;
+  background-color: rgb(178, 137, 73);
+  top: -30px;
   left: -50px;
   width: calc(100% + 100px);
-  height: calc(100% + 200px);
+  height: calc(100% + 100px);
   background-size: cover;
   background-position: 50%;
   z-index: 70;
@@ -364,7 +366,7 @@ img {
 }
 
 #sliderWrap {
-  margin-top: 150px;
+  margin-top: 250px;
   position: relative;
   width: 100%;
   height: 960px;
@@ -415,16 +417,17 @@ img {
 
 .nextimgWrapHeight {
   height: 600px;
-  margin-top: 300px;
+  margin-top: 350px;
 }
 
 .nextimgWrapHeight1 {
+  transition: 1s ease-in-out;
+  transition-delay: 1s;
   height: 100%;
   margin-top: -300px;
 }
 
 .nextimgWrap {
-  transition: 1s ease-in-out;
   width: 100%;
   position: relative;
 }

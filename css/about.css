@@ -251,527 +251,341 @@ img {
   height: calc(150vh - 195px);
 }
 
-.textani {
-  opacity: 0;
-  top: 70%;
-  transition: 0.5s;
+.Textcolor {
+  color: #b28949;
+  font-weight: bold;
 }
 
-.textani2 {
-  opacity: 1;
-  top: 40%;
-  transition: 0.5s;
+.mainContent {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+.mainContent .mainContent-Text {
+  position: absolute;
+  top: 500px;
+  left: 127px;
+  color: white;
+}
+.mainContent .mainContent-Text > span {
+  font-size: 40px;
+  font-weight: bold;
+}
+.mainContent .mainContent-Text > span h2 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #b28949;
+}
+.mainContent .mainContent-Text > h1 {
+  font-size: 80px;
+  position: relative;
+}
+.mainContent .mainContent-Text > h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #b28949;
+}
+.mainContent .mainContent-Text .Textinfo {
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.mainContent-page2 {
+  width: 50%;
+  height: calc(100% - 260px);
+  background-color: white;
+  position: absolute;
+  right: 0;
+  bottom: calc(100% - 60px);
+}
+
+.mainContent2 {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: calc(100vh - 195px);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainContent2 > div:nth-child(1) {
+  width: 20%;
+  height: 100vh;
+}
+.mainContent2 > div:nth-child(2) {
+  position: relative;
+}
+.mainContent2 > div:nth-child(3) {
+  width: 20%;
+  height: 100vh;
+}
+
+.mainContent2-flex2length {
+  width: 60%;
+  height: 50vh;
+}
+
+.mainContent2-flex2-100 {
+  width: 100%;
+  height: 100vh;
+  transform: scale(1.5, 1.3);
+  transition: 0.5s ease-in-out;
   transition-delay: 2s;
 }
 
-.textani3 {
+.portfolioWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.portfolioboxTrans {
+  transform: translate(-50%, -50%);
+}
+
+.portfoliobox {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  overflow: hidden;
+}
+.portfoliobox > span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: white;
+  font-size: 40px;
   opacity: 0;
-  top: 10%;
-  transition: 0.5s;
+  transition: 1s;
+  z-index: 999;
 }
 
-.textani4 {
+.imgWrap {
+  position: relative;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+}
+.imgWrap > div {
+  width: 100%;
+  height: 100%;
+}
+.imgWrap > div:nth-child(1) {
+  height: 100.2%;
+}
+
+.mainContent2-Text1 {
+  height: 30%;
+  transform: translate(-50%, -50%);
+  left: 15%;
+  position: absolute;
+  font-family: "Anton", sans-serif;
+}
+.mainContent2-Text1 h1 {
+  color: black;
+  font-size: 300px;
+  font-weight: 900;
+}
+
+.portfolio-Text {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
   opacity: 1;
-  top: 40%;
-  transition: 0.5s;
-  transition-delay: 2s;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 0%;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 80%;
+  text-align: center;
+  margin-left: 80px;
+  margin: 0 auto;
 }
 
-.e {
-  transform: matrix(-1, 0, 0, -1, 0, 0);
-  transition: all 2s cubic-bezier(0.42, 0, 0, 1.01);
+.portfolio-TextWrap {
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  top: 48%;
+  left: 50%;
+  position: absolute;
+  transition: 0.7s;
+  z-index: 999;
+  width: 30%;
+  height: 25%;
 }
 
-@media (min-width: 312px) and (max-width: 1024px) {
-  .delay0-5s {
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-    transition-delay: 0.5s;
-  }
-  .delay1-5s {
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-    transition-delay: 1.5s;
-  }
-  .mainContent {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-  }
-  .mainContent .mainContent-Text {
-    position: absolute;
-    bottom: 100px;
-    left: 67px;
-    color: white;
-  }
-  .mainContent .mainContent-Text > h1 {
-    font-size: 90px;
-    position: relative;
-  }
-  .mainContent .mainContent-Text > h2 {
-    font-size: 15px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: #b28949;
-  }
-  .mainContent-page2 {
-    width: 50%;
-    height: calc(100% - 260px);
-    background-color: white;
-    position: absolute;
-    right: 0;
-    bottom: calc(100% - 60px);
-  }
-  .mainContent2 {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: calc(100vh - 195px);
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .mainContent2 > div:nth-child(1) {
-    width: 20%;
-    height: 100vh;
-  }
-  .mainContent2 > div:nth-child(2) {
-    position: relative;
-  }
-  .mainContent2 > div:nth-child(3) {
-    width: 20%;
-    height: 100vh;
-  }
-  .mainContent2-flex2length {
-    width: 60%;
-    height: 50vh;
-  }
-  .mainContent2-flex2-100 {
-    width: 100%;
-    height: 100vh;
-    transform: scale(1.5, 1.3);
-    transition: 0.5s ease-in-out;
-    transition-delay: 2s;
-  }
-  .portfolioWrap {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .portfolioboxTrans {
-    transform: translate(-50%, -50%);
-  }
-  .portfoliobox {
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 999;
-    overflow: hidden;
-  }
-  .portfoliobox > span {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    transition: 1s;
-    z-index: 999;
-  }
-  .imgWrap {
-    position: relative;
-    height: 100%;
-    transition: 0.5s ease-in-out;
-  }
-  .imgWrap > div {
-    width: 100%;
-    height: 100%;
-  }
-  .imgWrap > div:nth-child(1) {
-    height: 100.2%;
-  }
-  .mainContent2-Text1 {
-    height: 30%;
-    transform: translate(-50%, -50%);
-    left: 15%;
-    position: absolute;
-    font-family: "Anton", sans-serif;
-    top: 50%;
-  }
-  .mainContent2-Text1 h1 {
-    color: black;
-    font-size: 250px;
-    font-weight: 900;
-  }
-  .portfolio-Text {
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
-    opacity: 1;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    top: 20%;
-    left: 0%;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    height: 80%;
-    text-align: center;
-    margin-left: 80px;
-    margin: 0 auto;
-  }
-  .portfolio-TextWrap {
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-    top: 48%;
-    left: 50%;
-    position: absolute;
-    transition: 0.7s;
-    z-index: 999;
-    width: 60%;
-    height: 25%;
-  }
-  .mainContent2-Text2 {
-    height: 30%;
-    transform: translate(-50%, -50%);
-    left: 83%;
-    position: absolute;
-    z-index: -10;
-    top: 50%;
-    font-family: "Anton", sans-serif;
-  }
-  .mainContent2-Text2 > p {
-    transition: all 2s;
-  }
-  .mainContent2-Text2 h1 {
-    color: #b28949;
-    font-size: 250px;
-    font-weight: 900;
-  }
-  .glitchText {
-    color: white;
-    font-size: 80px;
-    position: relative;
-    width: 700px;
-    margin: 0 auto;
-    z-index: 1;
-  }
+.mainContent2-Text2 {
+  height: 30%;
+  transform: translate(-50%, -50%);
+  left: 83%;
+  position: absolute;
+  z-index: -10;
+  font-family: "Anton", sans-serif;
 }
-@media (min-width: 1024px) {
-  .delay0-5s {
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-    transition-delay: 0.5s;
-  }
-  .delay1-5s {
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-    transition-delay: 1.5s;
-  }
-  .mainContent {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-  }
-  .mainContent .mainContent-Text {
-    position: absolute;
-    bottom: 120px;
-    left: 127px;
-    color: white;
-  }
-  .mainContent .mainContent-Text > h1 {
-    font-size: 80px;
-    position: relative;
-  }
-  .mainContent .mainContent-Text > h2 {
-    font-size: 15px;
-    font-weight: bold;
-    margin-left: 10px;
-    color: #b28949;
-  }
-  .mainContent-page2 {
-    width: 50%;
-    height: calc(100% - 260px);
-    background-color: white;
-    position: absolute;
-    right: 0;
-    bottom: calc(100% - 60px);
-  }
-  .mainContent2 {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: calc(100vh - 195px);
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .mainContent2 > div:nth-child(1) {
-    width: 20%;
-    height: 100vh;
-  }
-  .mainContent2 > div:nth-child(2) {
-    position: relative;
-  }
-  .mainContent2 > div:nth-child(3) {
-    width: 20%;
-    height: 100vh;
-  }
-  .mainContent2-flex2length {
-    width: 60%;
-    height: 50vh;
-  }
-  .mainContent2-flex2-100 {
-    width: 100%;
-    height: 100vh;
-    transform: scale(1.5, 1.3);
-    transition: 0.5s ease-in-out;
-    transition-delay: 2s;
-  }
-  .portfolioWrap {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .portfolioboxTrans {
-    transform: translate(-50%, -50%);
-  }
-  .portfoliobox {
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 999;
-    overflow: hidden;
-  }
-  .portfoliobox > span {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    color: white;
-    font-size: 40px;
-    opacity: 0;
-    transition: 1s;
-    z-index: 999;
-  }
-  .imgWrap {
-    position: relative;
-    height: 100%;
-    transition: 0.5s ease-in-out;
-  }
-  .imgWrap > div {
-    width: 100%;
-    height: 100%;
-  }
-  .imgWrap > div:nth-child(1) {
-    height: 100.2%;
-  }
-  .mainContent2-Text1 {
-    height: 30%;
-    transform: translate(-50%, -50%);
-    left: 15%;
-    position: absolute;
-    font-family: "Anton", sans-serif;
-  }
-  .mainContent2-Text1 h1 {
-    color: black;
-    font-size: 300px;
-    font-weight: 900;
-  }
-  .portfolio-Text {
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
-    opacity: 1;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    top: 20%;
-    left: 0%;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    height: 80%;
-    text-align: center;
-    margin-left: 80px;
-    margin: 0 auto;
-  }
-  .portfolio-TextWrap {
-    overflow: hidden;
-    transform: translate(-50%, -50%);
-    top: 48%;
-    left: 50%;
-    position: absolute;
-    transition: 0.7s;
-    z-index: 999;
-    width: 30%;
-    height: 25%;
-  }
-  .mainContent2-Text2 {
-    height: 30%;
-    transform: translate(-50%, -50%);
-    left: 83%;
-    position: absolute;
-    z-index: -10;
-    font-family: "Anton", sans-serif;
-  }
-  .mainContent2-Text2 > p {
-    transition: all 2s;
-  }
-  .mainContent2-Text2 h1 {
-    color: #b28949;
-    font-size: 300px;
-    font-weight: 900;
-  }
-  .glitchText {
-    color: white;
-    font-size: 100px;
-    position: relative;
-    width: 700px;
-    margin: 0 auto;
-    z-index: 1;
-  }
-  .tran-dealy {
-    transition-delay: 1.5s;
-    transition: 0.5s ease-in-out;
-  }
-  .tran-dealy2 {
-    transition-delay: 0.5s;
-    transition: 0.5s ease-in-out;
-  }
+.mainContent2-Text2 > p {
+  transition: all 2s;
 }
+.mainContent2-Text2 h1 {
+  color: #b28949;
+  font-size: 300px;
+  font-weight: 900;
+}
+
+.glitchText {
+  color: white;
+  font-size: 100px;
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.tran-dealy {
+  transition-delay: 1.5s;
+  transition: 0.5s ease-in-out;
+}
+
+.tran-dealy2 {
+  transition-delay: 0.5s;
+  transition: 0.5s ease-in-out;
+}
+
 @-webkit-keyframes noise-anim {
   0% {
-    clip: rect(61px, 9999px, 1px, 0);
+    clip: rect(74px, 9999px, 71px, 0);
   }
   5% {
-    clip: rect(50px, 9999px, 51px, 0);
+    clip: rect(88px, 9999px, 53px, 0);
   }
   10% {
-    clip: rect(19px, 9999px, 8px, 0);
+    clip: rect(2px, 9999px, 39px, 0);
   }
   15% {
-    clip: rect(83px, 9999px, 98px, 0);
+    clip: rect(29px, 9999px, 15px, 0);
   }
   20% {
-    clip: rect(42px, 9999px, 85px, 0);
+    clip: rect(84px, 9999px, 76px, 0);
   }
   25% {
-    clip: rect(74px, 9999px, 45px, 0);
+    clip: rect(55px, 9999px, 5px, 0);
   }
   30% {
-    clip: rect(27px, 9999px, 53px, 0);
+    clip: rect(37px, 9999px, 11px, 0);
   }
   35% {
-    clip: rect(19px, 9999px, 8px, 0);
+    clip: rect(54px, 9999px, 28px, 0);
   }
   40% {
-    clip: rect(42px, 9999px, 61px, 0);
+    clip: rect(49px, 9999px, 68px, 0);
   }
   45% {
-    clip: rect(32px, 9999px, 26px, 0);
+    clip: rect(53px, 9999px, 53px, 0);
   }
   50% {
-    clip: rect(33px, 9999px, 90px, 0);
+    clip: rect(71px, 9999px, 37px, 0);
   }
   55% {
-    clip: rect(32px, 9999px, 77px, 0);
+    clip: rect(76px, 9999px, 42px, 0);
   }
   60% {
-    clip: rect(80px, 9999px, 51px, 0);
+    clip: rect(86px, 9999px, 99px, 0);
   }
   65% {
-    clip: rect(50px, 9999px, 71px, 0);
+    clip: rect(59px, 9999px, 25px, 0);
   }
   70% {
-    clip: rect(61px, 9999px, 68px, 0);
+    clip: rect(63px, 9999px, 30px, 0);
   }
   75% {
-    clip: rect(21px, 9999px, 37px, 0);
+    clip: rect(83px, 9999px, 60px, 0);
   }
   80% {
-    clip: rect(98px, 9999px, 7px, 0);
+    clip: rect(68px, 9999px, 31px, 0);
   }
   85% {
-    clip: rect(14px, 9999px, 36px, 0);
+    clip: rect(13px, 9999px, 47px, 0);
   }
   90% {
-    clip: rect(3px, 9999px, 14px, 0);
+    clip: rect(93px, 9999px, 90px, 0);
   }
   95% {
-    clip: rect(49px, 9999px, 65px, 0);
+    clip: rect(48px, 9999px, 64px, 0);
   }
   100% {
-    clip: rect(30px, 9999px, 96px, 0);
+    clip: rect(26px, 9999px, 2px, 0);
   }
 }
+
 @keyframes noise-anim {
   0% {
-    clip: rect(61px, 9999px, 1px, 0);
+    clip: rect(74px, 9999px, 71px, 0);
   }
   5% {
-    clip: rect(50px, 9999px, 51px, 0);
+    clip: rect(88px, 9999px, 53px, 0);
   }
   10% {
-    clip: rect(19px, 9999px, 8px, 0);
+    clip: rect(2px, 9999px, 39px, 0);
   }
   15% {
-    clip: rect(83px, 9999px, 98px, 0);
+    clip: rect(29px, 9999px, 15px, 0);
   }
   20% {
-    clip: rect(42px, 9999px, 85px, 0);
+    clip: rect(84px, 9999px, 76px, 0);
   }
   25% {
-    clip: rect(74px, 9999px, 45px, 0);
+    clip: rect(55px, 9999px, 5px, 0);
   }
   30% {
-    clip: rect(27px, 9999px, 53px, 0);
+    clip: rect(37px, 9999px, 11px, 0);
   }
   35% {
-    clip: rect(19px, 9999px, 8px, 0);
+    clip: rect(54px, 9999px, 28px, 0);
   }
   40% {
-    clip: rect(42px, 9999px, 61px, 0);
+    clip: rect(49px, 9999px, 68px, 0);
   }
   45% {
-    clip: rect(32px, 9999px, 26px, 0);
+    clip: rect(53px, 9999px, 53px, 0);
   }
   50% {
-    clip: rect(33px, 9999px, 90px, 0);
+    clip: rect(71px, 9999px, 37px, 0);
   }
   55% {
-    clip: rect(32px, 9999px, 77px, 0);
+    clip: rect(76px, 9999px, 42px, 0);
   }
   60% {
-    clip: rect(80px, 9999px, 51px, 0);
+    clip: rect(86px, 9999px, 99px, 0);
   }
   65% {
-    clip: rect(50px, 9999px, 71px, 0);
+    clip: rect(59px, 9999px, 25px, 0);
   }
   70% {
-    clip: rect(61px, 9999px, 68px, 0);
+    clip: rect(63px, 9999px, 30px, 0);
   }
   75% {
-    clip: rect(21px, 9999px, 37px, 0);
+    clip: rect(83px, 9999px, 60px, 0);
   }
   80% {
-    clip: rect(98px, 9999px, 7px, 0);
+    clip: rect(68px, 9999px, 31px, 0);
   }
   85% {
-    clip: rect(14px, 9999px, 36px, 0);
+    clip: rect(13px, 9999px, 47px, 0);
   }
   90% {
-    clip: rect(3px, 9999px, 14px, 0);
+    clip: rect(93px, 9999px, 90px, 0);
   }
   95% {
-    clip: rect(49px, 9999px, 65px, 0);
+    clip: rect(48px, 9999px, 64px, 0);
   }
   100% {
-    clip: rect(30px, 9999px, 96px, 0);
+    clip: rect(26px, 9999px, 2px, 0);
   }
 }
 .glitchText:after {
@@ -788,133 +602,133 @@ img {
 
 @-webkit-keyframes noise-anim-2 {
   0% {
-    clip: rect(53px, 9999px, 63px, 0);
+    clip: rect(22px, 9999px, 84px, 0);
   }
   5% {
-    clip: rect(42px, 9999px, 26px, 0);
+    clip: rect(5px, 9999px, 73px, 0);
   }
   10% {
-    clip: rect(55px, 9999px, 79px, 0);
+    clip: rect(47px, 9999px, 26px, 0);
   }
   15% {
-    clip: rect(48px, 9999px, 81px, 0);
+    clip: rect(4px, 9999px, 14px, 0);
   }
   20% {
-    clip: rect(70px, 9999px, 100px, 0);
+    clip: rect(2px, 9999px, 82px, 0);
   }
   25% {
-    clip: rect(43px, 9999px, 32px, 0);
+    clip: rect(62px, 9999px, 6px, 0);
   }
   30% {
-    clip: rect(51px, 9999px, 60px, 0);
+    clip: rect(67px, 9999px, 7px, 0);
   }
   35% {
-    clip: rect(82px, 9999px, 2px, 0);
+    clip: rect(33px, 9999px, 39px, 0);
   }
   40% {
-    clip: rect(23px, 9999px, 81px, 0);
+    clip: rect(17px, 9999px, 36px, 0);
   }
   45% {
-    clip: rect(86px, 9999px, 68px, 0);
+    clip: rect(45px, 9999px, 82px, 0);
   }
   50% {
-    clip: rect(65px, 9999px, 63px, 0);
+    clip: rect(32px, 9999px, 36px, 0);
   }
   55% {
-    clip: rect(67px, 9999px, 16px, 0);
+    clip: rect(18px, 9999px, 53px, 0);
   }
   60% {
-    clip: rect(14px, 9999px, 49px, 0);
+    clip: rect(65px, 9999px, 84px, 0);
   }
   65% {
-    clip: rect(99px, 9999px, 51px, 0);
+    clip: rect(55px, 9999px, 9px, 0);
   }
   70% {
-    clip: rect(27px, 9999px, 38px, 0);
+    clip: rect(17px, 9999px, 24px, 0);
   }
   75% {
-    clip: rect(4px, 9999px, 80px, 0);
+    clip: rect(19px, 9999px, 69px, 0);
   }
   80% {
-    clip: rect(68px, 9999px, 47px, 0);
+    clip: rect(7px, 9999px, 5px, 0);
   }
   85% {
-    clip: rect(56px, 9999px, 83px, 0);
+    clip: rect(46px, 9999px, 2px, 0);
   }
   90% {
-    clip: rect(97px, 9999px, 42px, 0);
+    clip: rect(77px, 9999px, 100px, 0);
   }
   95% {
-    clip: rect(27px, 9999px, 97px, 0);
+    clip: rect(35px, 9999px, 75px, 0);
   }
   100% {
-    clip: rect(61px, 9999px, 40px, 0);
+    clip: rect(21px, 9999px, 17px, 0);
   }
 }
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(53px, 9999px, 63px, 0);
+    clip: rect(22px, 9999px, 84px, 0);
   }
   5% {
-    clip: rect(42px, 9999px, 26px, 0);
+    clip: rect(5px, 9999px, 73px, 0);
   }
   10% {
-    clip: rect(55px, 9999px, 79px, 0);
+    clip: rect(47px, 9999px, 26px, 0);
   }
   15% {
-    clip: rect(48px, 9999px, 81px, 0);
+    clip: rect(4px, 9999px, 14px, 0);
   }
   20% {
-    clip: rect(70px, 9999px, 100px, 0);
+    clip: rect(2px, 9999px, 82px, 0);
   }
   25% {
-    clip: rect(43px, 9999px, 32px, 0);
+    clip: rect(62px, 9999px, 6px, 0);
   }
   30% {
-    clip: rect(51px, 9999px, 60px, 0);
+    clip: rect(67px, 9999px, 7px, 0);
   }
   35% {
-    clip: rect(82px, 9999px, 2px, 0);
+    clip: rect(33px, 9999px, 39px, 0);
   }
   40% {
-    clip: rect(23px, 9999px, 81px, 0);
+    clip: rect(17px, 9999px, 36px, 0);
   }
   45% {
-    clip: rect(86px, 9999px, 68px, 0);
+    clip: rect(45px, 9999px, 82px, 0);
   }
   50% {
-    clip: rect(65px, 9999px, 63px, 0);
+    clip: rect(32px, 9999px, 36px, 0);
   }
   55% {
-    clip: rect(67px, 9999px, 16px, 0);
+    clip: rect(18px, 9999px, 53px, 0);
   }
   60% {
-    clip: rect(14px, 9999px, 49px, 0);
+    clip: rect(65px, 9999px, 84px, 0);
   }
   65% {
-    clip: rect(99px, 9999px, 51px, 0);
+    clip: rect(55px, 9999px, 9px, 0);
   }
   70% {
-    clip: rect(27px, 9999px, 38px, 0);
+    clip: rect(17px, 9999px, 24px, 0);
   }
   75% {
-    clip: rect(4px, 9999px, 80px, 0);
+    clip: rect(19px, 9999px, 69px, 0);
   }
   80% {
-    clip: rect(68px, 9999px, 47px, 0);
+    clip: rect(7px, 9999px, 5px, 0);
   }
   85% {
-    clip: rect(56px, 9999px, 83px, 0);
+    clip: rect(46px, 9999px, 2px, 0);
   }
   90% {
-    clip: rect(97px, 9999px, 42px, 0);
+    clip: rect(77px, 9999px, 100px, 0);
   }
   95% {
-    clip: rect(27px, 9999px, 97px, 0);
+    clip: rect(35px, 9999px, 75px, 0);
   }
   100% {
-    clip: rect(61px, 9999px, 40px, 0);
+    clip: rect(21px, 9999px, 17px, 0);
   }
 }
 .glitchText:before {

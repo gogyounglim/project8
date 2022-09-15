@@ -103,12 +103,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="nextimgWrap">
+                <div class="nextimgWrap nextimgWrapHeight">
                     <h3>
-                        <span style="width:100%" ></span>
-                        <span style="width:100%" ></span>
-                        <span style="height: 100%;"></span>
-                        <span style="height: 100%;"></span>
+                        <span class="textline1" style="width:100%" ></span>
+                        <span class="textline2" style="width:100%" ></span>
+                        <span class="textline3" style="height: 100%;"></span>
+                        <span class="textline4" style="height: 100%;"></span>
                         GUITAR
                     </h3>
                     <div class="nextimg">
@@ -125,6 +125,28 @@
 
     <script>
     $(function(){
+        $('.scrollText p').fadeIn(1000);
+        setTimeout(function(){
+            $('.scrollLine').animate({'height':'30px'},500);
+        },900)
+        
+
+        
+        $('.nextimg').click(function(){
+            $('.nextimgWrap').removeClass('nextimgWrapHeight');
+            $('.nextimgWrap').addClass('nextimgWrapHeight1');
+            $('.textline1').animate({'width':'0%'},1000);
+            $('.textline2').animate({'width':'0%'},1000);
+            $('.textline3').animate({'height':'0%'},1000);
+            $('.textline4').animate({'height':'0%'},1000);
+            $('.nextimgWrap h3').fadeOut(1000);
+            setTimeout(function(){
+                location.href = "sub2.html";     
+            },2200)
+            
+
+        });
+
         $('.nextimg').mouseover(function(){
             $('.nextimg').css('background-color','#b28949');
         });
@@ -175,6 +197,8 @@
                 if (num>=1) {    
                     $(".scrollContent").css("transform","translate3d(0px," +num*-100+"px,"+ "0px)");
                     $(".rightgold").css("transform","translate3d(0px," +num*30+"px,"+ "0px)");
+                    $('.scrollText p').fadeOut();
+                    $('.scrollLine').animate({'height':'0px'},200);
                 }
                 if(num>=5) {
                     $('.introCon1').css("opacity","1");

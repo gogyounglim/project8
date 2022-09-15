@@ -196,12 +196,14 @@ img{width: 100%; height: 100%;}
   }
   
   .mainImg{
-    background: url(../img/sub2/guitarmain2.jpg) no-repeat 0% 50%;;
+    background: url(../img/sub2/guitar.jpg) no-repeat 0% 50%;;
     position: relative;
-    top: -100px;
+    background-blend-mode: multiply;
+    background-color: rgba(178, 137, 73);
+    top: -30px;
     left: -50px;
     width: calc(100% + 50px * 2);
-    height: calc(100% + 100px * 2);
+    height: calc(100% + 100px );
     background-size: cover;
     // transform: translateZ(0) rotate(180deg);
     // background-blend-mode: multiply;
@@ -347,7 +349,7 @@ img{width: 100%; height: 100%;}
     
   }
   #sliderWrap{
-    margin-top: 150px;
+    margin-top: 250px;
     position: relative;
     width: 100%;
     height: 960px;
@@ -399,16 +401,18 @@ img{width: 100%; height: 100%;}
 
   .nextimgWrapHeight{
     height: 600px;
-    margin-top: 300px;
+    margin-top: 350px;
+    // transition: 1s ease-in-out;
   }
   .nextimgWrapHeight1{
+    transition: 1s ease-in-out;
+    transition-delay: 1s;
     height: 100%;
     margin-top: -300px;
-    transition-delay: 1s;
   }
 
   .nextimgWrap{
-    transition: 1s ease-in-out;
+    
     width: 100%;
     position: relative;
     >h3{
@@ -457,7 +461,7 @@ img{width: 100%; height: 100%;}
   }
   .nextimg{
     background-image: url(../img/main/1.jpg);
-    width: calc(100% + 50px * 2);
+    width: calc(100% + 100px );
     height: calc(100% + 100px * 2);
     position: absolute;
     top: -100px;
