@@ -17,6 +17,11 @@
             <div class="matrix-2000"></div>
             <div class="matrix2000"></div>
         </div>
+        <div class="loadingWrap">
+            <div class="matrix2000"></div>
+            <div class="matrix-2000"></div>
+            <div class="matrix2000"></div>
+        </div>
         <div class="menu">
             <a onclick="homepage()" class="Home-button">
                <span>HOME</span>
@@ -24,7 +29,7 @@
             <a onclick="workpage()" class="Work-button">
                 <span>WORK</span>    
             </a>
-            <a href="" class="About-button">
+            <a onclick="aboutPage()" class="About-button">
                <span>ABOUT</span>
             </a>
         </div>
@@ -125,10 +130,36 @@
 
     <script>
     $(function(){
+
+        $(".Work-button").mouseover(function(){
+        $(".Work-button").css("opacity","1");
+        });
+        $(".Work-button").mouseleave(function(){
+
+        });
+        $(".About-button").mouseover(function(){
+            $(".About-button").css("opacity","1");
+        });
+        $(".About-button").mouseleave(function(){
+            if(a==0){
+                $(".About-button").css("opacity","0.3");
+            }else{
+                
+            }
+        });
+        $(".Home-button").mouseover(function(){
+            $(".Home-button").css("opacity","1");
+        });
+        $(".Home-button").mouseleave(function(){
+            if(b==0){
+                $(".Home-button").css("opacity","0.3");
+            }
+        });
+
         $('.scrollText p').fadeIn(1000);
         setTimeout(function(){
-            $('.scrollLine').animate({'height':'30px'},500);
-        },900)
+            $('.scrollLine').animate({'height':'30px'},300);
+        },500)
         
 
         
@@ -273,7 +304,13 @@ function checkboundary() {
     innerSlider.style.left = `-${inner.width - outer.width}px`
   }
 }
+
+var a=0; //aboutpage
+var b=0; //homepage
+
 function homepage(){
+    b=1;
+    
     $('.loadingWrap').css('opacity','1');
     $('.loadingWrap').css('z-index','9999');
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
@@ -282,6 +319,8 @@ function homepage(){
     document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
     document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
     document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","0.3");
+    $(".Home-button").css("opacity","1");
 
     setTimeout(function(){
         document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
@@ -296,6 +335,37 @@ function homepage(){
     },1400)
     setTimeout(function(){
         location.href = "index.html";     
+    },2200)
+    
+}
+function aboutPage(){
+    a=1;
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","0.3");
+    $(".About-button").css("opacity","1");
+
+    setTimeout(function(){
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix-2000');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
+        $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
+        $('.scrollContent > h3').css('display','none');
+        $('.scrollText').css('display','none');
+        
+        
+    },1400)
+    setTimeout(function(){
+        location.href = "about.html";     
     },2200)
     
 }

@@ -14,6 +14,11 @@
 <body>
     
     <div id="motionWrap">
+        <div class="loadingWrap">
+            <div class="matrix2000"></div>
+            <div class="matrix-2000"></div>
+            <div class="matrix2000"></div>
+        </div>
         <!-- <img src="img/main/bg-overlay.png" alt="background overlay" class="mainbackground"> -->
         <video muted autoplay loop  class="back-Viedeo">
             <source src="./img/main/bg-video4.mp4">
@@ -31,9 +36,9 @@
         </div>
 
         <div id="line">
-            <div class="leftgold">
+            <!-- <div class="leftgold">
     
-            </div>
+            </div> -->
             <div class="left Line">
     
             </div>
@@ -62,6 +67,52 @@
                                 웹표준기반 스마트 UI/UX디자인&웹퍼블리셔 과정 수료<br>
                                     -라인컴퓨터아트학원</span>   
                         </div>
+                        <div class="Contact1">
+                            <span>Number : 010-9236-3024</span>
+                        </div>
+                        <div class="Contact2">
+                            <span>Instagram : lim1im</span>
+                        </div>
+                        <div class="Contact3">
+                            <span>e-mail : rhrudfla12445@naver.com</span>
+                        </div>
+                        <div class="mainContent-photo">
+                            <div class="mainContent-photoFlex">
+                                <div>
+                                    <img src="img/about/html.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="img/about/css.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="img/about/java.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="mainContent-photoFlex">
+                                <div>
+                                    <img src="img/about/sass.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="img/about/vue.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="img/about/mssql.png" alt="">
+                                </div>
+                            </div>
+                            <div class="mainContent-photoFlex">
+                                <div>
+                                    <img src="img/about/mysql.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="img/about/photoshop.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="img/about/illustrator.png" alt="">
+                                </div>
+                            </div>
+                            
+                        </div>
                         
                     </div>
 
@@ -74,7 +125,100 @@
 </body>
 <script>
 
+var a = 0;
+function homepage(){
+    a=1;
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    $(".Home-button").css("opacity","1");
+    $(".About-button").css("opacity","0.3");
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+
+
+    setTimeout(function(){
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix-2000');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
+        $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
+        $('.mainWrap').css('display','none');
+
+        
+    },1400)
+    setTimeout(function(){
+        location.href = "index.html";     
+    },2200)
+}
+function workpage(){
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","1");
+    $(".About-button").css("opacity","0.3");
+
+    setTimeout(function(){
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix-2000');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
+        $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
+        $('.mainWrap').css('display','none');
+
+        
+    },1400)
+    setTimeout(function(){
+        location.href = "index.html";     
+
+    },2200)
+}
+
 $(function(){
+
+    $(".Contact1").css("top","750px");
+    $(".Contact1").css("opacity","1");
+    $(".Contact2").css("top","750px");
+    $(".Contact2").css("opacity","1");
+    $(".Contact3").css("top","750px");
+    $(".Contact3").css("opacity","1");
+    
+    $(".mainContent-photo").css("opacity","1");
+
+    $(".mainContent-Text").css("opacity","1");
+    $(".mainContent-Text").css("top","300px");
+
+    $(".Work-button").mouseover(function(){
+        $(".Work-button").css("opacity","1");
+    });
+    $(".Work-button").mouseleave(function(){
+        $(".Work-button").css("opacity","0.3");
+    });
+
+    $(".Home-button").mouseover(function(){
+        $(".Home-button").css("opacity","1");
+    });
+    $(".Home-button").mouseleave(function(){
+        if(a==0){
+            $(".Home-button").css("opacity","0.3");
+        }else{
+
+        }
+         
+    });
+
         var pointSize = $(".pointer").width()/2;
         $("body").mousemove(function(e){    
             $('.pointer').css("top", e.pageY-pointSize);

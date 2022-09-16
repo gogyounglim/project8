@@ -16,6 +16,37 @@ img{width: 100%; height: 100%;}
 .img4{transform: translate(0%, -300%) matrix(1, 0, 0, 1, 0, 0);}
 
 
+.loadingWrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // display: none;
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  background: none;
+  // z-index: 99999;
+  >div{
+    width: 100%;
+    height: 33.33%;
+    background-color: white;  
+  }
+}
+.matrix0{
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: 1s ease-in-out;
+  
+}
+.matrix2000{
+  transform: matrix(1, 0, 0, 1, 2000, 0);
+  transition: 1s ease-in-out;
+}
+.matrix-2000{
+  transform: matrix(1, 0, 0, 1, -2000, 0);
+  transition: 1s ease-in-out;
+}
+
 .back-Viedeo{
   z-index: -99999;
   position: absolute;

@@ -24,7 +24,7 @@
             <a onclick="workpage()" class="Work-button">
                 <span>WORK</span>    
             </a>
-            <a href="" class="About-button">
+            <a onclick="aboutPage()" class="About-button">
                <span>ABOUT</span>
             </a>
         </div>
@@ -54,6 +54,10 @@
             <div class="scrollContent">   
                 <h3>BOOK</h3>
                 <div class="mainImg">
+                    <div class="scrollText">
+                        <p>Scroll</p>
+                        <span class="scrollLine"></span>
+                    </div>
 
                 </div>
                 <div class="introCon">
@@ -99,13 +103,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="nextimgWrap">
+                <div class="nextimgWrap nextimgWrapHeight">
                     <h3>
                         <span style="width:100%" ></span>
                         <span style="width:100%" ></span>
                         <span style="height: 100%;"></span>
                         <span style="height: 100%;"></span>
-                        BOOK
+                        SHOES
                     </h3>
                     <div class="nextimg">
                         
@@ -121,12 +125,56 @@
 
     <script>
     $(function(){
+        $(".Work-button").mouseover(function(){
+            $(".Work-button").css("opacity","1");
+        });
+        $(".Work-button").mouseleave(function(){
+
+        });
+        $(".About-button").mouseover(function(){
+            $(".About-button").css("opacity","1");
+        });
+        $(".About-button").mouseleave(function(){
+            if(a==0){
+                $(".About-button").css("opacity","0.3");
+            }else{
+                
+            }
+        });
+        $(".Home-button").mouseover(function(){
+            $(".Home-button").css("opacity","1");
+        });
+        $(".Home-button").mouseleave(function(){
+            if(b==0){
+                $(".Home-button").css("opacity","0.3");
+            }
+        });
+
+
+        $('.scrollText p').fadeIn(1000);
+        setTimeout(function(){
+            $('.scrollLine').animate({'height':'30px'},300);
+        },500)
+
         $('.nextimg').mouseover(function(){
             $('.nextimg').css('background-color','#b28949');
         });
         $('.nextimg').mouseleave(function(){
             $('.nextimg').css('background-color','rgba(85, 84, 84, 0.6)');
         });
+        $('.nextimg').click(function(){
+            $('.nextimgWrap').removeClass('nextimgWrapHeight');
+            $('.nextimgWrap').addClass('nextimgWrapHeight1');
+            $('.textline1').animate({'width':'0%'},1000);
+            $('.textline2').animate({'width':'0%'},1000);
+            $('.textline3').animate({'height':'0%'},1000);
+            $('.textline4').animate({'height':'0%'},1000);
+            $('.nextimgWrap h3').fadeOut(1000);
+            setTimeout(function(){
+                location.href = "sub1.html";     
+            },2200)
+        });
+
 
 
 
@@ -171,6 +219,8 @@
                 if (num>=1) {    
                     $(".scrollContent").css("transform","translate3d(0px," +num*-100+"px,"+ "0px)");
                     $(".rightgold").css("transform","translate3d(0px," +num*30+"px,"+ "0px)");
+                    $('.scrollText p').fadeOut();
+                    $('.scrollLine').animate({'height':'0px'},200);
                 }
                 if(num>=5) {
                     $('.introCon1').css("opacity","1");
@@ -255,6 +305,8 @@ function homepage(){
     document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
     document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
     document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","0.3");
+    $(".Home-button").css("opacity","1");
 
     setTimeout(function(){
         document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
@@ -272,6 +324,36 @@ function homepage(){
     },2200)
     
 }
+function aboutPage(){
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","0.3");
+    $(".About-button").css("opacity","1");
+
+    setTimeout(function(){
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
+        document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix0');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix-2000');
+        document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix0');
+        $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
+        $('.scrollContent > h3').css('display','none');
+        $('.scrollText').css('display','none');
+        
+    },1400)
+    setTimeout(function(){
+        location.href = "about.html";     
+    },2200)
+    
+}
+
 
     
     
