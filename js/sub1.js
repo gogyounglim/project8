@@ -4,7 +4,7 @@ $(function(){
     $(".Work-button").css("opacity","1");
     });
     $(".Work-button").mouseleave(function(){
-
+    
     });
     $(".About-button").mouseover(function(){
         $(".About-button").css("opacity","1");
@@ -24,13 +24,13 @@ $(function(){
             $(".Home-button").css("opacity","0.3");
         }
     });
-
+    
     $('.scrollText p').fadeIn(1000);
     setTimeout(function(){
         $('.scrollLine').animate({'height':'30px'},300);
     },500)
     
-
+    
     
     $('.nextimg').click(function(){
         $('.nextimgWrap').removeClass('nextimgWrapHeight');
@@ -44,18 +44,18 @@ $(function(){
             location.href = "sub2.html";     
         },2200)
         
-
+    
     });
-
+    
     $('.nextimg').mouseover(function(){
         $('.nextimg').css('background-color','#b28949');
     });
     $('.nextimg').mouseleave(function(){
         $('.nextimg').css('background-color','rgba(85, 84, 84, 0.6)');
     });
-
-
-
+    
+    
+    
     var pointSize = $(".pointer").width()/2;
     $("body").mousemove(function(e){    
         $('.pointer').css("top", e.pageY-pointSize);
@@ -65,7 +65,7 @@ $(function(){
     $("body").on("mouseleave", function(){
         $('.pointer').fadeOut();
     });
-
+    
     $('.menu a').mouseover(function(){
         $('.pointer').addClass('pointerColor2');
     });
@@ -73,24 +73,24 @@ $(function(){
         $('.pointer').removeClass('pointerColor2');
         // $('.pointer').addClass('pointerColor1');
     });
-
+    
     $(".computerImg img").click(function(){
         location.href = "https://gogyounglim.github.io/project2/";
     })
-
     
-});
-
-;
-let num = 0;
-let idx = 0;
-let delta;
-let scrollcon = document.querySelector('.scrollContent');
-let introCon1 = document.querySelector('.introCon1');
-
-
-$(window).on('mousewheel DOMMouseScroll', function (e) {
-delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
+    
+    });
+    
+    ;
+    let num = 0;
+    let idx = 0;
+    let delta;
+    let scrollcon = document.querySelector('.scrollContent');
+    let introCon1 = document.querySelector('.introCon1');
+    
+    
+    $(window).on('mousewheel DOMMouseScroll', function (e) {
+    delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
     if (delta < 0) {
         if (!(num == 35) && delta < 0) {
             num++;
@@ -126,72 +126,45 @@ delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
             $(".rightgold").css("transform","translate3d(0px," +num*30+"px,"+ "0px)");
         }
     }
-console.log('스크롤',num);
-console.log('idx',idx);
-console.log('delta',delta);
-})
-
-//슬라이더 
-
-let slider = document.querySelector(".slider")
-let innerSlider = document.querySelector(".slider-inner")
-let pressed = false
-let startx
-let x
-
-slider.addEventListener("mousedown", e => {
-    pressed = true
-    startx = e.offsetX - innerSlider.offsetLeft
+    console.log('스크롤',num);
+    console.log('idx',idx);
+    console.log('delta',delta);
+    })
     
-})
-
-
-
-window.addEventListener("mouseup", () => {
-    pressed = false
-})
-
-slider.addEventListener("mousemove", e => {
-if (!pressed) return
-e.preventDefault()
-x = e.offsetX
-
-innerSlider.style.left = `${x - startx}px `
-checkboundary()
-})
-
-
-
-
-function checkboundary() {
-let outer = slider.getBoundingClientRect()
-let inner = innerSlider.getBoundingClientRect()
-
-if (parseInt(innerSlider.style.left) > 0) {
-innerSlider.style.left = "30";
-} else if (inner.right < outer.right) {
-innerSlider.style.left = `-${inner.width - outer.width}px`
-}
-}
-
-var a=0; //aboutpage
-var b=0; //homepage
-
-function homepage(){
-b=1;
-
-$('.loadingWrap').css('opacity','1');
-$('.loadingWrap').css('z-index','9999');
-document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
-document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
-document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
-document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
-document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
-document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
-$(".Work-button").css("opacity","0.3");
-$(".Home-button").css("opacity","1");
-
-setTimeout(function(){
+   
+    
+    
+    
+    
+    function checkboundary() {
+    let outer = slider.getBoundingClientRect()
+    let inner = innerSlider.getBoundingClientRect()
+    
+    if (parseInt(innerSlider.style.left) > 0) {
+    innerSlider.style.left = "30";
+    } else if (inner.right < outer.right) {
+    innerSlider.style.left = `-${inner.width - outer.width}px`
+    }
+    }
+    
+    var a=0; //aboutpage
+    var b=0; //homepage
+    
+    function homepage(){
+    b=1;
+    
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","0.3");
+    $(".Home-button").css("opacity","1");
+    
+    setTimeout(function(){
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
     document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
@@ -201,26 +174,26 @@ setTimeout(function(){
     $('.mainImg').css('background','url(../img/main/bg-overlay.png)')
     $('.scrollContent > h3').css('display','none');
     
-},1400)
-setTimeout(function(){
+    },1400)
+    setTimeout(function(){
     location.href = "index.html";     
-},2200)
-
-}
-function aboutPage(){
-a=1;
-$('.loadingWrap').css('opacity','1');
-$('.loadingWrap').css('z-index','9999');
-document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
-document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
-document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
-document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
-document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
-document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
-$(".Work-button").css("opacity","0.3");
-$(".About-button").css("opacity","1");
-
-setTimeout(function(){
+    },2200)
+    
+    }
+    function aboutPage(){
+    a=1;
+    $('.loadingWrap').css('opacity','1');
+    $('.loadingWrap').css('z-index','9999');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.remove('matrix2000');
+    document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix0');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.remove('matrix-2000');
+    document.querySelector('.loadingWrap > div:nth-child(2)').classList.add('matrix0');
+    $(".Work-button").css("opacity","0.3");
+    $(".About-button").css("opacity","1");
+    
+    setTimeout(function(){
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.add('matrix2000');
     document.querySelector('.loadingWrap > div:nth-child(1)').classList.remove('matrix0');
     document.querySelector('.loadingWrap > div:nth-child(3)').classList.add('matrix2000');
@@ -232,12 +205,10 @@ setTimeout(function(){
     $('.scrollText').css('display','none');
     
     
-},1400)
-setTimeout(function(){
+    },1400)
+    setTimeout(function(){
     location.href = "about.html";     
-},2200)
-
-}
-
-
-
+    },2200)
+    
+    }
+    

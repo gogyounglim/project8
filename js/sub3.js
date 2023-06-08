@@ -127,35 +127,7 @@ console.log('idx',idx);
 console.log('delta',delta);
 })
 
-//슬라이더 
 
-let slider = document.querySelector(".slider")
-let innerSlider = document.querySelector(".slider-inner")
-let pressed = false
-let startx
-let x
-
-slider.addEventListener("mousedown", e => {
-    pressed = true
-    startx = e.offsetX - innerSlider.offsetLeft
-    
-})
-
-
-
-window.addEventListener("mouseup", () => {
-    pressed = false
-})
-
-slider.addEventListener("mousemove", e => {
-if (!pressed) return
-e.preventDefault()
-x = e.offsetX-100
-
-innerSlider.style.left = `${x - startx}px `
-
-checkboundary()
-})
 
 
 
